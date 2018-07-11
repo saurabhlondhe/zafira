@@ -2,23 +2,13 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Welcome to MkDocs\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
+            "text": "Zafira is central automation reporting system that is build on the top of Java Spring Framework. It dramatically increases the transparany of test automation results and provides better undestanding of product quality. Qaprosoft team is developing Zafira based on more then 10-years expertise in quality assurance and we strongly believe that your QA/Dev engineers and managers will love it!\n\n\n\n  \n\n\n\n\n\nZafira was initially designed to track automation progress of the tests written using \nCarina automation framework\n but you are capable to integrate Zafira client into you own automation tool. We are activly developing clients for different languages and frameworks but still looking for active community to provide better support. \n\n\nPrimary features\n\n\n\n\nReal-time test results tracking via websockets\n\n\nVNC streaming and video recording of test sessions\n\n\nFlexibly configured widgets and dashboards based on \nD3JS\n\n\nUser management with authorization policies\n\n\nIntegration with TestRail and JIRA\n\n\nIntegration with Hipchat and Slack\n\n\nAbility to compose automation reports and send via email\n\n\n\n\n\n  \n\n    \n\n      \nConfigurable dashboards\n\n      \n\n    \n\n    \n\n      \nIntegrations with multiple services\n\n      \n\n    \n\n  \n\n  \n\n    \n\n      \nReal-time test results\n\n      \n\n    \n\n    \n\n      \nLive streaming and video recording\n\n      \n\n    \n\n  \n\n  \n\n    \n\n      \nComparison of test runs\n\n      \n\n    \n\n    \n\n      \nTest issues tracking", 
             "title": "Overview"
         }, 
         {
-            "location": "/#welcome-to-mkdocs", 
-            "text": "For full documentation visit  mkdocs.org .", 
-            "title": "Welcome to MkDocs"
-        }, 
-        {
-            "location": "/#commands", 
-            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.", 
-            "title": "Commands"
-        }, 
-        {
-            "location": "/#project-layout", 
-            "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
-            "title": "Project layout"
+            "location": "/#primary-features", 
+            "text": "Real-time test results tracking via websockets  VNC streaming and video recording of test sessions  Flexibly configured widgets and dashboards based on  D3JS  User management with authorization policies  Integration with TestRail and JIRA  Integration with Hipchat and Slack  Ability to compose automation reports and send via email   \n   \n     \n       Configurable dashboards \n       \n     \n     \n       Integrations with multiple services \n       \n     \n   \n   \n     \n       Real-time test results \n       \n     \n     \n       Live streaming and video recording \n       \n     \n   \n   \n     \n       Comparison of test runs \n       \n     \n     \n       Test issues tracking", 
+            "title": "Primary features"
         }, 
         {
             "location": "/getting_started/", 
