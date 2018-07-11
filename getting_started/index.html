@@ -252,9 +252,38 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Getting started
+      </label>
+    
     <a href="./" title="Getting started" class="md-nav__link md-nav__link--active">
       Getting started
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker-setup" title="Docker setup" class="md-nav__link">
+    Docker setup
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -300,6 +329,22 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker-setup" title="Docker setup" class="md-nav__link">
+    Docker setup
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -314,6 +359,29 @@
                 
                 
                 <h1 id="getting-started">Getting started</h1>
+<h4 id="docker-setup">Docker setup</h4>
+<p>The easiest way to deploy Zafira it to use <a href="https://docs.docker.com/">Docker</a>. You will find all the details for installation of <a href="https://docs.docker.com/install/">Docker Engine</a> and <a href="https://docs.docker.com/compose/install/">Docker Compose</a> in oficial documentation. Docker allows to install Zafira on Linux, Mac or Windows. </p>
+<p>Verify Docker Engine setup:
+ ```
+$ docker version</p>
+<p>Client:
+ Version:      18.05.0-ce
+ ...</p>
+<p>Server:
+ Engine:
+  Version:      18.05.0-ce
+  ...</p>
+<pre><code>Verify Docker Compose setup:
+</code></pre>
+
+<p>$ docker-compose version</p>
+<p>docker-compose version 1.21.2, build a133471
+docker-py version: 3.3.0
+ ```</p>
+<p>#### Zafira startup using Docker</p>
+<p align="center">
+  <img width="650px" height="550px" src="img/docker.png">
+</p>
                 
                   
                 
