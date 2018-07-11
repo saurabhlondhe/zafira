@@ -17,7 +17,7 @@
         }, 
         {
             "location": "/getting_started/", 
-            "text": "Getting started\n\n\nDocker setup\n\n\nThe easiest way to deploy Zafira it to use \nDocker\n. You will find all the details for installation of \nDocker Engine\n and \nDocker Compose\n in oficial documentation. Docker allows to install Zafira on Linux, Mac or Windows. \n\n\nVerify Docker Engine setup:\n\n\n```\n$ docker version\n\n\nClient:\n Version:      18.05.0-ce\n ...\n\n\nServer:\n Engine:\n  Version:      18.05.0-ce\n  ...\n\n\nVerify Docker Compose setup:\n\n\n\n\n\n$ docker-compose version\n\n\ndocker-compose version 1.21.2, build a133471\ndocker-py version: 3.3.0\n ```\n\n\n#### Zafira startup using Docker", 
+            "text": "Getting started\n\n\nDocker setup\n\n\nThe easiest way to deploy Zafira it to use \nDocker\n. You will find all the details for installation of \nDocker Engine\n and \nDocker Compose\n in oficial documentation. Docker allows to install Zafira on Linux, Mac or Windows. \n\n\nVerify Docker Engine setup:\n\n\n```\n$ docker version\n\n\nClient:\n Version:      18.05.0-ce\n ...\n\n\nServer:\n Engine:\n  Version:      18.05.0-ce\n  ...\n\n\n\nVerify Docker Compose setup:\n\n\n\n\n\n$ docker-compose version\n\n\ndocker-compose version 1.21.2, build a133471\ndocker-py version: 3.3.0\n ```\n\n\n#### Zafira startup using Docker", 
             "title": "Getting started"
         }, 
         {
@@ -27,7 +27,7 @@
         }, 
         {
             "location": "/getting_started/#docker-setup", 
-            "text": "The easiest way to deploy Zafira it to use  Docker . You will find all the details for installation of  Docker Engine  and  Docker Compose  in oficial documentation. Docker allows to install Zafira on Linux, Mac or Windows.   Verify Docker Engine setup:  ```\n$ docker version  Client:\n Version:      18.05.0-ce\n ...  Server:\n Engine:\n  Version:      18.05.0-ce\n  ...  Verify Docker Compose setup:  $ docker-compose version  docker-compose version 1.21.2, build a133471\ndocker-py version: 3.3.0\n ```  #### Zafira startup using Docker", 
+            "text": "The easiest way to deploy Zafira it to use  Docker . You will find all the details for installation of  Docker Engine  and  Docker Compose  in oficial documentation. Docker allows to install Zafira on Linux, Mac or Windows.   Verify Docker Engine setup:  ```\n$ docker version  Client:\n Version:      18.05.0-ce\n ...  Server:\n Engine:\n  Version:      18.05.0-ce\n  ...  \nVerify Docker Compose setup:  $ docker-compose version  docker-compose version 1.21.2, build a133471\ndocker-py version: 3.3.0\n ```  #### Zafira startup using Docker", 
             "title": "Docker setup"
         }, 
         {
