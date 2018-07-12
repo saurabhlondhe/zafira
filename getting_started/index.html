@@ -390,28 +390,28 @@
 </p>
 
 <h4 id="startup-in-docker">Startup in Docker</h4>
-<ol>
+<ul>
 <li>Clone Zafira repo:</li>
-</ol>
+</ul>
 <pre><code>$ git clone git@github.com:qaprosoft/zafira.git
 </code></pre>
 
-<ol>
+<ul>
 <li>If you are planning to access Zafira remotely you will need to modify <strong>docker-compose.yml</strong> specifying appropriate IP address of your host:</li>
-</ol>
+</ul>
 <pre><code>environment:
   - ZAFIRA_URL=http://localhost:8080
 </code></pre>
 
-<ol>
+<ul>
 <li>Start Zafira:</li>
-</ol>
+</ul>
 <pre><code>$ docker-compose up -d
 </code></pre>
 
-<ol>
+<ul>
 <li>Verify deployment by running:</li>
-</ol>
+</ul>
 <pre><code>$ docker ps
 
 CONTAINER ID        IMAGE                               COMMAND    
@@ -422,15 +422,15 @@ a207d5718996        sebp/elk:630                        &quot;/usr/local/bin/sta
 e8a2d32590ed        qaprosoft/postgres:9.6              &quot;docker-entrypoint.s…&quot;
 </code></pre>
 
-<ol>
+<ul>
 <li>Open Zafira in your browser:</li>
-</ol>
+</ul>
 <pre><code>http://localhost:8080/zafira
 </code></pre>
 
-<ol>
+<ul>
 <li>Use default credentials to login:</li>
-</ol>
+</ul>
 <pre><code>qpsdemo/qpsdemo
 </code></pre>
 
