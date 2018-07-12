@@ -36,6 +36,66 @@
             "title": "Startup in Docker"
         }, 
         {
+            "location": "/client_setup/", 
+            "text": "Client setup", 
+            "title": "Client setup"
+        }, 
+        {
+            "location": "/client_setup/#client-setup", 
+            "text": "", 
+            "title": "Client setup"
+        }, 
+        {
+            "location": "/integrations/", 
+            "text": "Integration", 
+            "title": "Integrations"
+        }, 
+        {
+            "location": "/integrations/#integration", 
+            "text": "", 
+            "title": "Integration"
+        }, 
+        {
+            "location": "/profile/", 
+            "text": "Profile", 
+            "title": "Profile"
+        }, 
+        {
+            "location": "/profile/#profile", 
+            "text": "", 
+            "title": "Profile"
+        }, 
+        {
+            "location": "/dashboards/", 
+            "text": "Dashboards", 
+            "title": "Dashboards"
+        }, 
+        {
+            "location": "/dashboards/#dashboards", 
+            "text": "", 
+            "title": "Dashboards"
+        }, 
+        {
+            "location": "/test_runs/", 
+            "text": "Test runs", 
+            "title": "Test runs"
+        }, 
+        {
+            "location": "/test_runs/#test-runs", 
+            "text": "", 
+            "title": "Test runs"
+        }, 
+        {
+            "location": "/user_management/", 
+            "text": "User management", 
+            "title": "User management"
+        }, 
+        {
+            "location": "/user_management/#user-management", 
+            "text": "", 
+            "title": "User management"
+        }, 
+        {
             "location": "/releases/", 
             "text": "Release notes", 
             "title": "Release notes"
@@ -44,16 +104,6 @@
             "location": "/releases/#release-notes", 
             "text": "", 
             "title": "Release notes"
-        }, 
-        {
-            "location": "/about/", 
-            "text": "About", 
-            "title": "About"
-        }, 
-        {
-            "location": "/about/#about", 
-            "text": "", 
-            "title": "About"
         }
     ]
 }

@@ -19,7 +19,7 @@
 
     
     <url>
-     <loc>/releases/</loc>
+     <loc>/client_setup/</loc>
      <lastmod>2018-07-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -27,7 +27,47 @@
 
     
     <url>
-     <loc>/about/</loc>
+     <loc>/integrations/</loc>
+     <lastmod>2018-07-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/profile/</loc>
+     <lastmod>2018-07-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/dashboards/</loc>
+     <lastmod>2018-07-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/test_runs/</loc>
+     <lastmod>2018-07-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/user_management/</loc>
+     <lastmod>2018-07-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/releases/</loc>
      <lastmod>2018-07-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
