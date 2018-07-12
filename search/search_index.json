@@ -17,7 +17,7 @@
         }, 
         {
             "location": "/getting_started/", 
-            "text": "Getting started\n\n\nDocker setup\n\n\nThe easiest way to deploy Zafira it to use \nDocker\n. You will find all the details for installation of \nDocker Engine\n and \nDocker Compose\n in oficial documentation. Docker allows to install Zafira on Linux, Mac or Windows. \n\n\nVerify Docker Engine setup:\n\n\n$ docker version\n\nClient:\n Version:      18.05.0-ce\n ...\n\nServer:\n Engine:\n  Version:      18.05.0-ce\n  ...\n\n\n\n\nVerify Docker Compose setup:\n\n\n$ docker-compose version\n\ndocker-compose version 1.21.2, build a133471\ndocker-py version: 3.3.0\n\n\n\n\nZafira startup using Docker", 
+            "text": "Getting started\n\n\nPrerequesties\n\n\nThe easiest way to deploy Zafira it to use \nDocker\n. You will find all the details for installation of \nDocker Engine\n and \nDocker Compose\n in oficial documentation. Docker allows to install Zafira on Linux, Mac or Windows. Make sure that you have allocated at least 2 CPUs and 4Gb or RAM for Docker operations. Please verify that following ports are not binded:\n\n 5433  (PostgresDB)\n\n 15672 (RabbitMQ)\n\n 15674 (RabbitMQ)\n\n 5672  (RabbitMQ)\n\n 5601  (ELK)\n\n 9200  (ELK)\n\n 5044  (ELK)\n\n 8080  (Tomcat)\n\n\nZafira startup using Docker", 
             "title": "Getting started"
         }, 
         {
@@ -26,9 +26,9 @@
             "title": "Getting started"
         }, 
         {
-            "location": "/getting_started/#docker-setup", 
-            "text": "The easiest way to deploy Zafira it to use  Docker . You will find all the details for installation of  Docker Engine  and  Docker Compose  in oficial documentation. Docker allows to install Zafira on Linux, Mac or Windows.   Verify Docker Engine setup:  $ docker version\n\nClient:\n Version:      18.05.0-ce\n ...\n\nServer:\n Engine:\n  Version:      18.05.0-ce\n  ...  Verify Docker Compose setup:  $ docker-compose version\n\ndocker-compose version 1.21.2, build a133471\ndocker-py version: 3.3.0", 
-            "title": "Docker setup"
+            "location": "/getting_started/#prerequesties", 
+            "text": "The easiest way to deploy Zafira it to use  Docker . You will find all the details for installation of  Docker Engine  and  Docker Compose  in oficial documentation. Docker allows to install Zafira on Linux, Mac or Windows. Make sure that you have allocated at least 2 CPUs and 4Gb or RAM for Docker operations. Please verify that following ports are not binded:  5433  (PostgresDB)  15672 (RabbitMQ)  15674 (RabbitMQ)  5672  (RabbitMQ)  5601  (ELK)  9200  (ELK)  5044  (ELK)  8080  (Tomcat)", 
+            "title": "Prerequesties"
         }, 
         {
             "location": "/getting_started/#zafira-startup-using-docker", 

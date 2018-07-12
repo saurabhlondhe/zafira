@@ -271,8 +271,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#docker-setup" title="Docker setup" class="md-nav__link">
-    Docker setup
+  <a href="#prerequesties" title="Prerequesties" class="md-nav__link">
+    Prerequesties
   </a>
   
 </li>
@@ -340,8 +340,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#docker-setup" title="Docker setup" class="md-nav__link">
-    Docker setup
+  <a href="#prerequesties" title="Prerequesties" class="md-nav__link">
+    Prerequesties
   </a>
   
 </li>
@@ -373,31 +373,19 @@
                 
                 
                 <h1 id="getting-started">Getting started</h1>
-<h4 id="docker-setup">Docker setup</h4>
-<p>The easiest way to deploy Zafira it to use <a href="https://docs.docker.com/">Docker</a>. You will find all the details for installation of <a href="https://docs.docker.com/install/">Docker Engine</a> and <a href="https://docs.docker.com/compose/install/">Docker Compose</a> in oficial documentation. Docker allows to install Zafira on Linux, Mac or Windows. </p>
-<p>Verify Docker Engine setup:</p>
-<pre><code>$ docker version
-
-Client:
- Version:      18.05.0-ce
- ...
-
-Server:
- Engine:
-  Version:      18.05.0-ce
-  ...
-</code></pre>
-
-<p>Verify Docker Compose setup:</p>
-<pre><code>$ docker-compose version
-
-docker-compose version 1.21.2, build a133471
-docker-py version: 3.3.0
-</code></pre>
-
+<h4 id="prerequesties">Prerequesties</h4>
+<p>The easiest way to deploy Zafira it to use <a href="https://docs.docker.com/">Docker</a>. You will find all the details for installation of <a href="https://docs.docker.com/install/">Docker Engine</a> and <a href="https://docs.docker.com/compose/install/">Docker Compose</a> in oficial documentation. Docker allows to install Zafira on Linux, Mac or Windows. Make sure that you have allocated at least 2 CPUs and 4Gb or RAM for Docker operations. Please verify that following ports are not binded:
+<em> 5433  (PostgresDB)
+</em> 15672 (RabbitMQ)
+<em> 15674 (RabbitMQ)
+</em> 5672  (RabbitMQ)
+<em> 5601  (ELK)
+</em> 9200  (ELK)
+<em> 5044  (ELK)
+</em> 8080  (Tomcat)</p>
 <h4 id="zafira-startup-using-docker">Zafira startup using Docker</h4>
 <p><p align="center">
-  <img width="650px" height="550px" src="img/docker.png">
+  <img width="650px" height="550px" src="./img/docker.png">
 </p></p>
                 
                   
