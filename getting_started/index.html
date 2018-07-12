@@ -374,19 +374,64 @@
                 
                 <h1 id="getting-started">Getting started</h1>
 <h4 id="prerequesties">Prerequesties</h4>
-<p>The easiest way to deploy Zafira it to use <a href="https://docs.docker.com/">Docker</a>. You will find all the details for installation of <a href="https://docs.docker.com/install/">Docker Engine</a> and <a href="https://docs.docker.com/compose/install/">Docker Compose</a> in oficial documentation. Docker allows to install Zafira on Linux, Mac or Windows. Make sure that you have allocated at least 2 CPUs and 4Gb or RAM for Docker operations. Please verify that following ports are not binded:
-<em> 5433  (PostgresDB)
-</em> 15672 (RabbitMQ)
-<em> 15674 (RabbitMQ)
-</em> 5672  (RabbitMQ)
-<em> 5601  (ELK)
-</em> 9200  (ELK)
-<em> 5044  (ELK)
-</em> 8080  (Tomcat)</p>
+<p>The easiest way to deploy Zafira it to use <a href="https://docs.docker.com/">Docker</a>. You will find all the details for installation of <a href="https://docs.docker.com/install/">Docker Engine</a> and <a href="https://docs.docker.com/compose/install/">Docker Compose</a> in oficial documentation. Docker allows to install Zafira on Linux, Mac or Windows. Make sure that you have allocated at least 2 CPUs and 4Gb or RAM for Docker operations. Please verify that following ports are not binded:</p>
+<ul>
+<li>8080  (Tomcat)</li>
+<li>5433  (PostgresDB)</li>
+<li>15672 (RabbitMQ)</li>
+<li>15674 (RabbitMQ)</li>
+<li>5672  (RabbitMQ)</li>
+<li>5601  (ELK)</li>
+<li>9200  (ELK)</li>
+<li>5044  (ELK)
+ <p align="center">
+  <img width="650px" height="550px" src="img/docker.png">
+</p></li>
+</ul>
 <h4 id="zafira-startup-using-docker">Zafira startup using Docker</h4>
-<p><p align="center">
-  <img width="650px" height="550px" src="./img/docker.png">
-</p></p>
+<ol>
+<li>Clone Zafira repo:</li>
+</ol>
+<pre><code>$ git clone git@github.com:qaprosoft/zafira.git
+</code></pre>
+
+<ol>
+<li>If you are planning to access Zafira remotely you will need to modify <strong>docker-compose.yml</strong> specifying appropriate IP address of your host:</li>
+</ol>
+<pre><code>environment:
+  - ZAFIRA_URL=http://localhost:8080
+</code></pre>
+
+<ol>
+<li>Start Zafira:</li>
+</ol>
+<pre><code>$ docker-compose up -d
+</code></pre>
+
+<ol>
+<li>Verify deployment by running:</li>
+</ol>
+<pre><code>$ docker ps
+
+CONTAINER ID        IMAGE                               COMMAND    
+c0e8e371de0f        qaprosoft/zafira:latest             &quot;/bin/sh -c /entrypo…&quot;
+a207d5718996        sebp/elk:630                        &quot;/usr/local/bin/star…&quot; 
+5ccaadeeafe7        qaprosoft/rabbitmq:latest           &quot;docker-entrypoint.s…&quot;
+922b75b2849a        selenium/standalone-chrome:latest   &quot;/opt/bin/entry_poin…&quot;
+e8a2d32590ed        qaprosoft/postgres:9.6              &quot;docker-entrypoint.s…&quot;
+</code></pre>
+
+<ol>
+<li>Open Zafira in your browser:</li>
+</ol>
+<pre><code>http://localhost:8080/zafira
+</code></pre>
+
+<ol>
+<li>Use default credentials to login:</li>
+</ol>
+<pre><code>qpsdemo/qpsdemo
+</code></pre>
                 
                   
                 
