@@ -374,21 +374,20 @@
                 
                 <h1 id="getting-started">Getting started</h1>
 <h4 id="prerequesties">Prerequesties</h4>
-<p>The easiest way to deploy Zafira it to use <a href="https://docs.docker.com/">Docker</a>. You will find all the details for installation of <a href="https://docs.docker.com/install/">Docker Engine</a> and <a href="https://docs.docker.com/compose/install/">Docker Compose</a> in oficial documentation. Docker allows to install Zafira on Linux, Mac or Windows. Make sure that you have allocated at least 2 CPUs and 4Gb or RAM for Docker operations. Please verify that following ports are not binded:</p>
-<ul>
-<li>8080  (Tomcat)</li>
-<li>5433  (PostgresDB)</li>
-<li>15672 (RabbitMQ)</li>
-<li>15674 (RabbitMQ)</li>
-<li>5672  (RabbitMQ)</li>
-<li>5601  (ELK)</li>
-<li>9200  (ELK)</li>
-<li>5044  (ELK)</li>
-</ul>
+<p>The easiest way to deploy Zafira it to use <a href="https://docs.docker.com/">Docker</a>. You will find all the details for installation of <a href="https://docs.docker.com/install/">Docker Engine</a> and <a href="https://docs.docker.com/compose/install/">Docker Compose</a> in oficial documentation. Docker allows to install Zafira on Linux, Mac or Windows. Make sure that you have allocated at least 2 CPUs and 4Gb or RAM for Docker operations.</p>
 <p align="center">
   <img width="650px" height="550px" src="../img/docker.png">
 </p>
 
+<p>Before running Zafira, verify that following ports are not binded:
+<em> 8080  (Tomcat)
+</em> 5433  (PostgresDB)
+<em> 15672 (RabbitMQ)
+</em> 15674 (RabbitMQ)
+<em> 5672  (RabbitMQ)
+</em> 5601  (ELK)
+<em> 9200  (ELK)
+</em> 5044  (ELK)</p>
 <h4 id="startup-in-docker">Startup in Docker</h4>
 <ul>
 <li>Clone Zafira repo:</li>
