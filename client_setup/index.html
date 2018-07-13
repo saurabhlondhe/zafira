@@ -297,6 +297,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#integration-with-testng" title="Integration with TestNG" class="md-nav__link">
+    Integration with TestNG
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#languages-and-frameworks-supported" title="Languages and frameworks supported" class="md-nav__link">
     Languages and frameworks supported
   </a>
@@ -421,6 +428,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#integration-with-testng" title="Integration with TestNG" class="md-nav__link">
+    Integration with TestNG
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#languages-and-frameworks-supported" title="Languages and frameworks supported" class="md-nav__link">
     Languages and frameworks supported
   </a>
@@ -497,6 +511,36 @@ zafira_configurator=com.qaprosoft.carina.core.foundation.report.ZafiraConfigurat
 <p align="center">
   <img src="../img/flow_uml.png">
 </p>
+
+<h4 id="integration-with-testng">Integration with TestNG</h4>
+<p>If you are implementing your own TestNG-based automation project you can easily setup integration with Zafira using <a href="https://github.com/qaprosoft/zafira/blob/master/sources/zafira-client/src/main/java/com/qaprosoft/zafira/listener/ZafiraListener.java">TestNG listener</a>.
+* Add Zafira client as Maven dependency:</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;com.qaprosoft&lt;/groupId&gt;
+    &lt;artifactId&gt;zafira-client&lt;/artifactId&gt;
+    &lt;version&gt;latest&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<ul>
+<li>Create <a href="https://github.com/qaprosoft/carina-demo/blob/master/src/main/resources/zafira.properties">zafira.properties</a> and place in resource folder, update configuration</li>
+<li>Include com.qaprosoft.zafira.listener.ZafiraListener as TestNG listener:</li>
+</ul>
+<pre><code>&lt;suite&gt;
+    [...]
+      &lt;listeners&gt;
+        &lt;listener class-name=&quot;com.qaprosoft.zafira.listener.ZafiraListener&quot;/&gt;
+      &lt;/listeners&gt;
+    [...]
+&lt;/suite&gt;
+</code></pre>
+
+<p>or</p>
+<pre><code>@Listeners({ZafiraListener.class})
+public class LoginTest {
+[...]
+}
+</code></pre>
 
 <h4 id="languages-and-frameworks-supported">Languages and frameworks supported</h4>
 <ul>
