@@ -436,6 +436,10 @@
 <h4 id="access-token">Access token</h4>
 <p>Zafira provides REST API to track test automation results (Swagger is avaible by http://localhost:8080/zafira-ws/swagger-ui.html). You have diffent options of integration of your test client. Carina automation framework has integration with Zafira under the hood. Regardless of integration flow you selected, first of all you will need access token generated. Navigate to <strong>Username</strong> &gt; <strong>Profile</strong> in top navigation menu, scroll down and generate new access token.</p>
 <p align="center">
+  <img src="../img/menu_profile.png">
+</p>
+
+<p align="center">
   <img src="../img/access_token.png">
 </p>
 
@@ -454,7 +458,10 @@ zafira_report_emails=
 zafira_configurator=com.qaprosoft.carina.core.foundation.report.ZafiraConfigurator
 </code></pre>
 
-<p>Make sure that <strong>zafira_enabled=true</strong> and <strong>zafira_service_url</strong> specifies correct zafira URL. By default <strong>zafira_project=UNKNOWN</strong> but using admin user you are capable to create multiple projects via Zafira UI (top menu &gt; Project &gt; + Create). When new project created you may override <strong>zafira_project</strong> property and track resutls in appropriate context.</p>
+<p>Verify following properties:
+<em> zafira_enabled=true
+</em> zafira_service_url=<valid_zafira_url></p>
+<p>By default <strong>zafira_project=UNKNOWN</strong> but using admin user you are capable to create multiple projects via Zafira UI (Top menu &gt; Project &gt; Create). When new project created you may override <strong>zafira_project</strong> property and track resutls in appropriate context.</p>
 <p align="center">
   <img src="../img/flow_diagram.png">
 </p>
