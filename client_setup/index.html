@@ -290,8 +290,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#integration-with-test-frameworks" title="Integration with test frameworks" class="md-nav__link">
-    Integration with test frameworks
+  <a href="#integration-with-carina" title="Integration with Carina" class="md-nav__link">
+    Integration with Carina
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#languages-and-frameworks-supported" title="Languages and frameworks supported" class="md-nav__link">
+    Languages and frameworks supported
   </a>
   
 </li>
@@ -407,8 +414,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#integration-with-test-frameworks" title="Integration with test frameworks" class="md-nav__link">
-    Integration with test frameworks
+  <a href="#integration-with-carina" title="Integration with Carina" class="md-nav__link">
+    Integration with Carina
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#languages-and-frameworks-supported" title="Languages and frameworks supported" class="md-nav__link">
+    Languages and frameworks supported
   </a>
   
 </li>
@@ -463,7 +477,7 @@ Response:
 <pre><code>Authorizarion: Bearer &lt;auth_token&gt;
 </code></pre>
 
-<h4 id="integration-with-test-frameworks">Integration with test frameworks</h4>
+<h4 id="integration-with-carina">Integration with Carina</h4>
 <p>The easiest option to use Zafira with test automation is Carina framework. Carina tracks automation results under the hood, all you need to do is setting up of correct access token in <a href="https://github.com/qaprosoft/carina-demo/blob/master/src/main/resources/zafira.properties">zafira.properties</a> file.</p>
 <pre><code>zafira_enabled=true
 zafira_service_url=http://localhost:8080/zafira-ws
@@ -477,12 +491,20 @@ zafira_configurator=com.qaprosoft.carina.core.foundation.report.ZafiraConfigurat
 <p>Verify following properties:</p>
 <ul>
 <li>zafira_enabled=true</li>
-<li>zafira_service_url=<valid_zafira_url></li>
+<li>zafira_service_url=YOUR_ZAFIRA_URL</li>
 </ul>
 <p>By default <strong>zafira_project=UNKNOWN</strong> but using admin user you are capable to create multiple projects via Zafira UI (Top menu &gt; Project &gt; Create). When new project created you may override <strong>zafira_project</strong> property and track resutls in appropriate context.</p>
 <p align="center">
   <img src="../img/flow_uml.png">
 </p>
+
+<h4 id="languages-and-frameworks-supported">Languages and frameworks supported</h4>
+<ul>
+<li><a href="https://github.com/qaprosoft/zafira-testng">Java - TestNG guide</a></li>
+<li><a href="https://github.com/qaprosoft/zafira-ruby#cucumber-usage">Ruby - Cucumber</a></li>
+<li><a href="https://github.com/qaprosoft/zafira-ruby#rspec-usage">Ruby - RSpec</a></li>
+<li><a href="https://github.com/qaprosoft/zafira-nunit">C# - NUnit</a></li>
+</ul>
                 
                   
                 
