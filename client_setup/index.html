@@ -434,24 +434,40 @@
                 
                 <h1 id="client-setup">Client setup</h1>
 <h4 id="access-token">Access token</h4>
-<p>Zafira provides REST API to track test automation results (Swagger is avaible by http://localhost:8080/zafira-ws/swagger-ui.html). You have diffent options of integration of your test client. Carina automation framework has integration with Zafira under the hood. Regardless of integration flow you selected, first of all you will need access token generated. Navigate to <strong>Username</strong> &gt; <strong>Profile</strong> in top navigation menu, scroll down and generate new access token.</p>
+<p>Zafira provides REST API to track test automation results (Swagger is avaible by http://localhost:8080/zafira-ws/swagger-ui.html). You have diffent options of integration of your test client. Carina automation framework has integration with Zafira under the hood. Regardless of integration flow you selected, first of all you will need access token generated. Navigate to <strong>Username</strong> &gt; <strong>Profile</strong> in top navigation menu:</p>
 <p align="center">
   <img src="../img/menu_profile.png">
 </p>
 
+<p>Scroll down and generate new access token:</p>
 <p align="center">
   <img src="../img/access_token.png">
 </p>
 
-<p>Zafira uses stateless authenticatication using <a href="https://en.wikipedia.org/wiki/JSON_Web_Token">JWT</a> technology. In general clients stores refresh token that is used to generate access token with 5-hours expiration term. All HTTP calls that requires authorization context should contain haeder:</p>
-<pre><code>Authorizarion: Bearer &lt;access_token&gt;
+<p>Zafira uses stateless authenticatication using <a href="https://en.wikipedia.org/wiki/JSON_Web_Token">JWT</a> technology. In general clients stores refresh token that is used to generate access token with 5-hours expiration term. </p>
+<pre><code>POST /api/auth/refresh
+{
+  &quot;refreshToken&quot;: &quot;&lt;access_token&gt;&quot;
+}
+
+Response:
+{
+  &quot;type&quot;: &quot;Bearer&quot;,
+  &quot;accessToken&quot;: &quot;eyJhbGciOiJIUzUxMiJ9...&quot;,
+  &quot;refreshToken&quot;: &quot;eyJhbGciOiJIUzUxMi9...&quot;,
+  &quot;expiresIn&quot;: 300
+}
+</code></pre>
+
+<p>All HTTP calls that requires authorization context should contain haeder:</p>
+<pre><code>Authorizarion: Bearer &lt;auth_token&gt;
 </code></pre>
 
 <h4 id="integration-with-test-frameworks">Integration with test frameworks</h4>
 <p>The easiest option to use Zafira with test automation is Carina framework. Carina tracks automation results under the hood, all you need to do is setting up of correct access token in <a href="https://github.com/qaprosoft/carina-demo/blob/master/src/main/resources/zafira.properties">zafira.properties</a> file.</p>
 <pre><code>zafira_enabled=true
 zafira_service_url=http://localhost:8080/zafira-ws
-zafira_access_token=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3IiwicGFzc3dvcmQiOiJiMDdSaG5pZVk2NTlncU04VEFrOWtkK2F4ZXE3U...
+zafira_access_token=eyJhbGciOiJIUzUxMiJ9.eyJzdWI...
 zafira_project=UNKNOWN
 zafira_rerun_failures=false
 zafira_report_emails=
@@ -463,7 +479,7 @@ zafira_configurator=com.qaprosoft.carina.core.foundation.report.ZafiraConfigurat
 </em> zafira_service_url=<valid_zafira_url></p>
 <p>By default <strong>zafira_project=UNKNOWN</strong> but using admin user you are capable to create multiple projects via Zafira UI (Top menu &gt; Project &gt; Create). When new project created you may override <strong>zafira_project</strong> property and track resutls in appropriate context.</p>
 <p align="center">
-  <img src="../img/flow_diagram.png">
+  <img src="../img/flow_uml.png">
 </p>
                 
                   
