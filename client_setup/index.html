@@ -487,12 +487,12 @@ Response:
 }
 </code></pre>
 
-<p>All HTTP calls that requires authorization context should contain haeder:</p>
+<p>All HTTP calls that requires authorization context should contain header:</p>
 <pre><code>Authorizarion: Bearer &lt;auth_token&gt;
 </code></pre>
 
 <h4 id="integration-with-carina">Integration with Carina</h4>
-<p>The easiest option to use Zafira with test automation is Carina framework. Carina tracks automation results under the hood, all you need to do is setting up of correct access token in <a href="https://github.com/qaprosoft/carina-demo/blob/master/src/main/resources/zafira.properties">zafira.properties</a> file.</p>
+<p>Carina automation framework tacks test results in Zafira by default, all you need is valid access token in <a href="https://github.com/qaprosoft/carina-demo/blob/master/src/main/resources/zafira.properties">zafira.properties</a> file.</p>
 <pre><code>zafira_enabled=true
 zafira_service_url=http://localhost:8080/zafira-ws
 zafira_access_token=eyJhbGciOiJIUzUxMiJ9.eyJzdWI...
@@ -513,8 +513,10 @@ zafira_configurator=com.qaprosoft.carina.core.foundation.report.ZafiraConfigurat
 </p>
 
 <h4 id="integration-with-testng">Integration with TestNG</h4>
-<p>If you are implementing your own TestNG-based automation project you can easily setup integration with Zafira using <a href="https://github.com/qaprosoft/zafira/blob/master/sources/zafira-client/src/main/java/com/qaprosoft/zafira/listener/ZafiraListener.java">TestNG listener</a>.
-* Add Zafira client as Maven dependency:</p>
+<p>If you are implementing your own TestNG-based automation project you can easily setup integration with Zafira using <a href="https://github.com/qaprosoft/zafira/blob/master/sources/zafira-client/src/main/java/com/qaprosoft/zafira/listener/ZafiraListener.java">TestNG listener</a>.</p>
+<ul>
+<li>Add Zafira client as Maven dependency:</li>
+</ul>
 <pre><code>&lt;dependency&gt;
     &lt;groupId&gt;com.qaprosoft&lt;/groupId&gt;
     &lt;artifactId&gt;zafira-client&lt;/artifactId&gt;
