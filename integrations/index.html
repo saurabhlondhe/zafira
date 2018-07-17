@@ -512,17 +512,24 @@
 </p>
 
 <h4 id="jenkins">Jenkins</h4>
-<p>Jenkins integration is used for triggering new builds and collecting test jobs configuration during the startup. Also Zafira provides remote debug with Jenkins integration enabled. For Jenkins integration follow the next steps:
-<em> Create user with READ,RUN access for jobs
-</em> Generate access token (read <a href="https://support.cloudbees.com/hc/en-us/articles/115003090592-How-to-re-generate-my-Jenkins-user-token">instruction</a>)
-<em> Paste Jenkins URL, username and token to Zafira
-</em> Press save and refresh the page, green light indicates correct integration status</p>
+<p>Jenkins integration is used for triggering new builds and collecting test jobs configuration during the startup. Also Zafira provides remote debug with Jenkins integration enabled. For Jenkins integration follow the next steps:</p>
+<ul>
+<li>Create user with READ,RUN access for jobs</li>
+<li>Generate access token (read <a href="https://support.cloudbees.com/hc/en-us/articles/115003090592-How-to-re-generate-my-Jenkins-user-token">instruction</a>)</li>
+<li>Paste Jenkins URL, username and token to Zafira</li>
+<li>Press save and refresh the page, green light indicates correct integration status</li>
+</ul>
 <p>
   <img style="border: 1px solid grey;"  width="280px" height="420px" src="../img/int_jenkins.png">
 </p>
 
 <h4 id="jira">Jira</h4>
-<p>Jira integration allows to track known issues status for failed test cases. When you assign known issue to </p>
+<p>Jira integration allows to track known issues status for failed test cases. When you assign known issue to contstantly failing test cases you may specify appropriate Jira ticket. In Jira integrationg is inabled, Zafira will check current ticket status and track failure as known issus if ticket opened and as unknown if it is closed, so you will never loose regression bugs.</p>
+<ul>
+<li>Paste Jira URL, username and password to Zafira</li>
+<li>List set of statuses that indicates that ticket is closed</li>
+<li>Press save and refresh the page, green light indicates correct integration status</li>
+</ul>
 <p>
   <img style="border: 1px solid grey;" width="280px" height="420px" src="../img/int_jira.png">
 </p>
