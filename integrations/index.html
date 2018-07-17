@@ -276,9 +276,66 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Integrations
+      </label>
+    
     <a href="./" title="Integrations" class="md-nav__link md-nav__link--active">
       Integrations
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#amazon" title="Amazon" class="md-nav__link">
+    Amazon
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#email" title="Email" class="md-nav__link">
+    Email
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jenkins" title="Jenkins" class="md-nav__link">
+    Jenkins
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jira" title="Jira" class="md-nav__link">
+    Jira
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ldap" title="LDAP" class="md-nav__link">
+    LDAP
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -360,6 +417,50 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#amazon" title="Amazon" class="md-nav__link">
+    Amazon
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#email" title="Email" class="md-nav__link">
+    Email
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jenkins" title="Jenkins" class="md-nav__link">
+    Jenkins
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jira" title="Jira" class="md-nav__link">
+    Jira
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ldap" title="LDAP" class="md-nav__link">
+    LDAP
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -374,6 +475,50 @@
                 
                 
                 <h1 id="integration">Integration</h1>
+<h4 id="amazon">Amazon</h4>
+<p>Zafira uses integration with Amazon S3 service for storage of user profile photos and customer logos. First of all we will need to create new S3 bucket and generate access token to provide API access to Amazon S3 from Zafira.
+<em> Create new S3 bucket in region you prefer 
+</em> Create new IAM user with <strong>Programmatic access</strong>
+<em> Grant AmazonS3FullAccess for new user (read <a href="https://aws.amazon.com/blogs/security/writing-iam-policies-how-to-grant-access-to-an-amazon-s3-bucket/">detailed guide</a>)
+</em> Generate new access/secret keys
+* Navigate to <strong>Username &gt; Integrations</strong> in Zafira top navigation menu</p>
+<p align="center">
+  <img src="../img/menu_profile.png">
+</p>
+
+<ul>
+<li>Turn on Amazon integration and provide access/secret keys and name of the bucket you created</li>
+<li>Press save and refresh the page, green light indicates correct integration</li>
+</ul>
+<p align="center">
+  <img src="../img/int_amazon.png">
+</p>
+
+<h4 id="email">Email</h4>
+<p>Zafira provides functionality for sending test results, widgets and dashboards via email. You have to specify correct SMTP credentials to enable this feature. We are mostly using Gmail for that purposes. You can use configuration below replacing email and password with your valid Gmail credentials.
+<em> Turn on Email integration
+</em> Specify correct SMTP host and port
+<em> Specify valid Gmail credentials 
+</em> Press save and refresh the page, green light indicates correct integration</p>
+<p align="center">
+  <img src="../img/int_gmail.png">
+</p>
+
+<h4 id="jenkins">Jenkins</h4>
+<p>Jenkins integration is used for triggering new builds and collecting test jobs configuration during the startup. Also Zafira provides remote debug with Jenkins integration enabled.</p>
+<p align="center">
+  <img src="../img/int_jenkins.png">
+</p>
+
+<h4 id="jira">Jira</h4>
+<p align="center">
+  <img src="../img/int_jira.png">
+</p>
+
+<h4 id="ldap">LDAP</h4>
+<p align="center">
+  <img src="../img/int_ldap.png">
+</p>
                 
                   
                 
