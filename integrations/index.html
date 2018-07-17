@@ -475,25 +475,28 @@
                 
                 
                 <h1 id="integration">Integration</h1>
+<p>Zafira is integrated with multiple 3rd-party tools like Amazon, Slack, Gmail etc. You are able to add new integration in working Zafira without restart of web application. Navigate to <strong>Username &gt; Integrations</strong> in top navigation menu:</p>
+<p align="center">
+  <img src="../img/menu_profile.png">
+</p>
+
+<p>On the integrations page you will find multiple blocks responsible for different integration modules. Pay attention to the fact that security model HTTP/HTTPS may affect your integration URL.</p>
+<p align="center">
+  <img src="../img/feature_integrations.png">
+</p>
+
 <h4 id="amazon">Amazon</h4>
-<p>Zafira uses integration with Amazon S3 service for storage of user profile photos and customer logos. First of all we will need to create new S3 bucket and generate access token to provide API access to Amazon S3 from Zafira.</p>
+<p>Zafira uses integration with Amazon S3 service to store user profile photos and company logo. First of all we will need to create new S3 bucket and generate access token to provide API access to Amazon S3 from Zafira.</p>
 <ul>
 <li>Create new S3 bucket in region you prefer </li>
 <li>Create new IAM user with <strong>Programmatic access</strong></li>
 <li>Grant read/write permissions for new user (read <a href="https://aws.amazon.com/blogs/security/writing-iam-policies-how-to-grant-access-to-an-amazon-s3-bucket/">detailed guide</a>)</li>
 <li>Generate new access/secret keys</li>
-<li>Navigate to <strong>Username &gt; Integrations</strong> in Zafira top navigation menu</li>
+<li>Turn on Amazon integration and provide access/secret keys and name of the bucket you've created</li>
+<li>Press save and refresh the page, green light indicates correct integration status</li>
 </ul>
-<p align="center">
-  <img src="../img/menu_profile.png">
-</p>
-
-<ul>
-<li>Turn on Amazon integration and provide access/secret keys and name of the bucket you created</li>
-<li>Press save and refresh the page, green light indicates correct integration</li>
-</ul>
-<p align="center">
-  <img style="border: 1px solid grey;" width="420px" height="620px" src="../img/int_amazon.png">
+<p>
+  <img style="border: 1px solid grey;" width="210px" height="310px" src="../img/int_amazon.png">
 </p>
 
 <h4 id="email">Email</h4>
@@ -502,19 +505,24 @@
 <li>Turn on Email integration</li>
 <li>Specify correct SMTP host and port</li>
 <li>Specify valid Gmail credentials </li>
-<li>Press save and refresh the page, green light indicates correct integration</li>
+<li>Press save and refresh the page, green light indicates correct integration status</li>
 </ul>
 <p align="center">
-  <img style="border: 1px solid grey;"  width="420px" height="620px" src="../img/int_gmail.png">
+  <img style="border: 1px solid grey;"  width="210px" height="310px" src="../img/int_gmail.png">
 </p>
 
 <h4 id="jenkins">Jenkins</h4>
-<p>Jenkins integration is used for triggering new builds and collecting test jobs configuration during the startup. Also Zafira provides remote debug with Jenkins integration enabled.</p>
+<p>Jenkins integration is used for triggering new builds and collecting test jobs configuration during the startup. Also Zafira provides remote debug with Jenkins integration enabled. For Jenkins integration follow the next steps:
+<em> Create user with READ,RUN access for jobs
+</em> Generate access token (read <a href="https://support.cloudbees.com/hc/en-us/articles/115003090592-How-to-re-generate-my-Jenkins-user-token">instruction</a>)
+<em> Paste Jenkins URL, username and token to Zafira
+</em> Press save and refresh the page, green light indicates correct integration status</p>
 <p align="center">
   <img style="border: 1px solid grey;"  width="420px" height="620px" src="../img/int_jenkins.png">
 </p>
 
 <h4 id="jira">Jira</h4>
+<p>Jira integration allows to track known issues status for failed test cases. When you assign known issue to </p>
 <p align="center">
   <img style="border: 1px solid grey;" width="420px" height="620px" src="../img/int_jira.png">
 </p>
