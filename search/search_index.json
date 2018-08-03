@@ -107,12 +107,12 @@
         }, 
         {
             "location": "/profile/", 
-            "text": "Profile", 
+            "text": "Profile\n\n\nNavigate to \nUsername \n My profile\n in top navigation menu to customize your Zafira user preferences.\n\n\n\n  \n\n\n\n\n\nOn hover on round area near your first name settings icon appears, click it and upload or change existing picture of your profile.\n\n\n\n  \n\n\n\n\n\n\n  \n\n\n\n\n\nIn \nUser profile\n area personal user information such as first name, last name and email address  can be changed.\n\n\nEdit values in the corresponding fields and click \nSave\n button.\n\n\n\n  \n\n\n\n\n\nIn \nPreferences\n area Zafira system settings are available:\n\n\n\n\nColor schema\n\n\nDefault dashboard\n\n\nWidget refresh interval\n\n\n\n\nColor schema\n provides choice between Light and Black options.\n\n\nDefault dashboard\n will be the page opened after Zafira login. General dashboard by default.\n\n\nWidget refresh interval\n is applied when Refreshable option is picked for widget and lets widget to refresh its data according to the chosen time interval (30 sec, 1 min, 2 min, 5 min). Disabled by default.\n\n\n\n  \n\n\n\n\n\nIn \nChange password\n area user can update current password. Password must contain not less than 6 characters.\n\n\n\n  \n\n\n\n\n\nIn \nAccess token\n area token required for Zafira integration can be generated and copied .", 
             "title": "Profile"
         }, 
         {
             "location": "/profile/#profile", 
-            "text": "", 
+            "text": "Navigate to  Username   My profile  in top navigation menu to customize your Zafira user preferences.  \n     On hover on round area near your first name settings icon appears, click it and upload or change existing picture of your profile.  \n     \n     In  User profile  area personal user information such as first name, last name and email address  can be changed.  Edit values in the corresponding fields and click  Save  button.  \n     In  Preferences  area Zafira system settings are available:   Color schema  Default dashboard  Widget refresh interval   Color schema  provides choice between Light and Black options.  Default dashboard  will be the page opened after Zafira login. General dashboard by default.  Widget refresh interval  is applied when Refreshable option is picked for widget and lets widget to refresh its data according to the chosen time interval (30 sec, 1 min, 2 min, 5 min). Disabled by default.  \n     In  Change password  area user can update current password. Password must contain not less than 6 characters.  \n     In  Access token  area token required for Zafira integration can be generated and copied .", 
             "title": "Profile"
         }, 
         {
