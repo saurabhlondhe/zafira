@@ -1,76 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
     <url>
-     <loc>/</loc>
-     <lastmod>2018-10-05</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-10-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
-     <loc>/getting_started/</loc>
-     <lastmod>2018-10-05</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-10-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
-     <loc>/client_setup/</loc>
-     <lastmod>2018-10-05</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-10-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
-     <loc>/integrations/</loc>
-     <lastmod>2018-10-05</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-10-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
-     <loc>/profile/</loc>
-     <lastmod>2018-10-05</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-10-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
-     <loc>/dashboards/</loc>
-     <lastmod>2018-10-05</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-10-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
-     <loc>/test_runs/</loc>
-     <lastmod>2018-10-05</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-10-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
-     <loc>/user_management/</loc>
-     <lastmod>2018-10-05</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-10-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
-     <loc>/releases/</loc>
-     <lastmod>2018-10-05</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-10-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
 </urlset>
