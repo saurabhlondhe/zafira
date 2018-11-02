@@ -503,7 +503,22 @@
 <h4 id="amazon">Amazon</h4>
 <p>Zafira uses integration with Amazon S3 service to store user profile photos and company logo. First of all we will need to create new S3 bucket and generate access token to provide API access to Amazon S3 from Zafira.</p>
 <ul>
-<li>Create new S3 bucket in region you prefer </li>
+<li>Create new S3 bucket in region you prefer</li>
+<li>Navigate to bucket permissions, CORS configuration and set following policy:</li>
+</ul>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;CORSConfiguration xmlns=&quot;http://s3.amazonaws.com/doc/2006-03-01/&quot;&gt;
+&lt;CORSRule&gt;
+    &lt;AllowedOrigin&gt;*&lt;/AllowedOrigin&gt;
+    &lt;AllowedMethod&gt;GET&lt;/AllowedMethod&gt;
+    &lt;AllowedMethod&gt;POST&lt;/AllowedMethod&gt;
+    &lt;MaxAgeSeconds&gt;3000&lt;/MaxAgeSeconds&gt;
+    &lt;AllowedHeader&gt;*&lt;/AllowedHeader&gt;
+&lt;/CORSRule&gt;
+&lt;/CORSConfiguration&gt;
+</code></pre>
+
+<ul>
 <li>Create new IAM user with <strong>Programmatic access</strong></li>
 <li>Grant read/write permissions for new user (read <a href="https://aws.amazon.com/blogs/security/writing-iam-policies-how-to-grant-access-to-an-amazon-s3-bucket/">detailed guide</a>)</li>
 <li>Generate new access/secret keys</li>
