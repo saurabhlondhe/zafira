@@ -630,9 +630,8 @@
 <h3 id="step-2-get-user-profile">Step 2: Get user profile</h3>
 <p><strong>GET: /zafira-ws/api/users/profile?username={username}</strong></p>
 <p><strong>Headers:</strong> Authorization=Bearer {accessToken}</p>
-<p><strong>Request</strong></p>
-<pre><code class="json"></code></pre>
-
+<p><strong>Request</strong>
+None</p>
 <p><strong>Response</strong></p>
 <pre><code class="json">{
   &quot;id&quot;:2,
@@ -717,25 +716,16 @@
 </table>
 <hr />
 <h3 id="step-3-create-a-test-suite">Step 3: Create a test suite</h3>
-<p><strong>Request</strong></p>
 <p><strong>POST: /zafira-ws/api/tests/suites</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">Field</th>
-<th align="center">Datatype</th>
-<th align="center">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Authorization</td>
-<td align="center">String</td>
-<td align="center">Type + Access token</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Data:</strong></p>
+<p><strong>Headers:</strong> Authorization=Bearer {accessToken}</p>
+<p><strong>Request</strong></p>
+<pre><code class="json">{
+   &quot;fileName&quot;: &quot;ExampleFileName&quot;,
+   &quot;name&quot;: &quot;ExampleSuiteName&quot;,
+   &quot;userId&quot;: 2
+ }
+</code></pre>
+
 <table>
 <thead>
 <tr>
@@ -762,17 +752,15 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Body example:</strong></p>
+<p><strong>Response</strong></p>
 <pre><code class="json">{
-   &quot;fileName&quot;: &quot;ExampleFileName&quot;,
-   &quot;name&quot;: &quot;ExampleSuiteName&quot;,
-   &quot;userId&quot;: 2
- }
+  &quot;id&quot;: 8,
+  &quot;name&quot;: &quot;ExampleSuiteName&quot;,
+  &quot;fileName&quot;: &quot;ExampleFileName&quot;,
+  &quot;userId&quot;: 2
+}
 </code></pre>
 
-<p><strong>Response</strong></p>
-<p><strong>Status code:</strong> 200
-<strong>Response Body:</strong></p>
 <table>
 <thead>
 <tr>
@@ -804,15 +792,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Body example:</strong></p>
-<pre><code class="json">{
-  &quot;id&quot;: 8,
-  &quot;name&quot;: &quot;ExampleSuiteName&quot;,
-  &quot;fileName&quot;: &quot;ExampleFileName&quot;,
-  &quot;userId&quot;: 2
-}
-</code></pre>
-
+<hr />
 <h4 id="step-4-create-a-job">Step 4: Create a job</h4>
 <p><strong>Request</strong></p>
 <p><strong>Method:</strong> POST,
