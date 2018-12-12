@@ -1,0 +1,1727 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>Lifecycle - Zafira</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+      
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../#zafiras-minimal-http-flow" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Zafira" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Zafira
+              </span>
+              <span class="md-header-nav__topic">
+                Lifecycle
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/qaprosoft/zafira/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Github
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="Zafira" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Zafira
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/qaprosoft/zafira/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Github
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../getting_started/" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../client_setup/" title="Client setup" class="md-nav__link">
+      Client setup
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lifecycle
+      </label>
+    
+    <a href="./" title="Lifecycle" class="md-nav__link md-nav__link--active">
+      Lifecycle
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-preconditions-and-refresh-token" title="Step 1: Preconditions and refresh token" class="md-nav__link">
+    Step 1: Preconditions and refresh token
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-get-user-profile" title="Step 2: Get user profile" class="md-nav__link">
+    Step 2: Get user profile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-create-a-test-suite" title="Step 3: Create a test suite" class="md-nav__link">
+    Step 3: Create a test suite
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-create-a-job" title="Step 4: Create a job" class="md-nav__link">
+    Step 4: Create a job
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-create-a-test-run" title="Step 5: Create a test run" class="md-nav__link">
+    Step 5: Create a test run
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-create-a-test-case" title="Step 6: Create a test case" class="md-nav__link">
+    Step 6: Create a test case
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-start-a-test" title="Step 7: Start a test" class="md-nav__link">
+    Step 7: Start a test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-8-finish-a-test" title="Step 8: Finish a test" class="md-nav__link">
+    Step 8: Finish a test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-9-finish-a-test-run" title="Step 9: Finish a test run" class="md-nav__link">
+    Step 9: Finish a test run
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../integrations/" title="Integrations" class="md-nav__link">
+      Integrations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../profile/" title="Profile" class="md-nav__link">
+      Profile
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../dashboards/" title="Dashboards" class="md-nav__link">
+      Dashboards
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../test_runs/" title="Test runs" class="md-nav__link">
+      Test runs
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../user_management/" title="User management" class="md-nav__link">
+      User management
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../releases/" title="Release notes" class="md-nav__link">
+      Release notes
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-preconditions-and-refresh-token" title="Step 1: Preconditions and refresh token" class="md-nav__link">
+    Step 1: Preconditions and refresh token
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-get-user-profile" title="Step 2: Get user profile" class="md-nav__link">
+    Step 2: Get user profile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-create-a-test-suite" title="Step 3: Create a test suite" class="md-nav__link">
+    Step 3: Create a test suite
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-create-a-job" title="Step 4: Create a job" class="md-nav__link">
+    Step 4: Create a job
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-create-a-test-run" title="Step 5: Create a test run" class="md-nav__link">
+    Step 5: Create a test run
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-create-a-test-case" title="Step 6: Create a test case" class="md-nav__link">
+    Step 6: Create a test case
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-start-a-test" title="Step 7: Start a test" class="md-nav__link">
+    Step 7: Start a test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-8-finish-a-test" title="Step 8: Finish a test" class="md-nav__link">
+    Step 8: Finish a test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-9-finish-a-test-run" title="Step 9: Finish a test run" class="md-nav__link">
+    Step 9: Finish a test run
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/qaprosoft/zafira/edit/master/docs/lifecycle.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="zafiras-minimal-http-flow">Zafira's minimal http flow</h1>
+<hr />
+<h2 id="step-1-preconditions-and-refresh-token">Step 1: Preconditions and refresh token</h2>
+<p>First, login into Zafira under your creds <strong>via UI</strong>. Then navigate to user settings (just click on your username on
+top-right corner of the screen and click <strong>"My profile"</strong> button), where you can find <strong>"Access token"</strong> section.
+Click on <strong>"Generate"</strong> button and you will obtain access token, whish expires in 5 hours.</p>
+<p>Then, refresh your access token by <strong>http request</strong>, like this:</p>
+<p><strong>Request</strong></p>
+<p><strong>Method:</strong> POST,
+<strong>URI:</strong> ~/zafira-ws/api/auth/refresh
+<strong>Headers:</strong> No
+<strong>Data:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Datatype</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">refreshToken</td>
+<td align="center">String</td>
+<td align="center">token obtained by generation</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Body example:</strong></p>
+<pre><code class="json">{
+  &quot;refreshToken&quot;: &quot;eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwicGFzc3dvcmQiOiJPUG1zRDFrbTdvaGlIOGtWNjJ3TmRRb3Awb3BCWlBkdiIsInRlbmFudCI6InphZmlyYSIsImV4cCI6MTMwMzkzNjM5OTQ5fQ.pE7d-yr14QxlGSDaBQOn7mRR-2SGgr8RXvdTtZU3JHOEDw3QIVyEJYp-2sTlYiHzG5T_mfuvk7QnccdQZB0CHA&quot;
+}
+</code></pre>
+
+<p><strong>Response</strong></p>
+<p><strong>Status code:</strong> 200
+<strong>Response Body:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Datatype</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">type</td>
+<td align="center">String</td>
+<td align="center">Type of authorization</td>
+</tr>
+<tr>
+<td align="center">accessToken</td>
+<td align="center">String</td>
+<td align="center">Refreshed token we need for headers</td>
+</tr>
+<tr>
+<td align="center">expiresIn</td>
+<td align="center">int</td>
+<td align="center">Expiration time of new token</td>
+</tr>
+<tr>
+<td align="center">refreshToken</td>
+<td align="center">String</td>
+<td align="center">Token</td>
+</tr>
+<tr>
+<td align="center">tenant</td>
+<td align="center">String</td>
+<td align="center">Nodename of kubernetes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Body example:</strong></p>
+<pre><code class="json">{
+  &quot;type&quot;: &quot;Bearer&quot;,
+  &quot;accessToken&quot;: &quot;eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwidXNlcm5hbWUiOiJxcHNkZW1vIiwiZ3JvdXBJZHMiOlszXSwidGVuYW50IjoiemFmaXJhIiwiZXhwIjoxNTQ0NjM5MTQyfQ.H4JE7TEUodDEXpfipP7NjDWE0ORjGOCFgSFlQ0X5LfcUSVmQbebazh7C0_UBVmIZeBb6hqLNwEtqW07-mchwrQ&quot;,
+  &quot;refreshToken&quot;: &quot;eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwicGFzc3dvcmQiOiJPUG1zRDFrbTdvaGlIOGtWNjJ3TmRRb3Awb3BCWlBkdiIsInRlbmFudCI6InphZmlyYSIsImV4cCI6MTU0NTIyNTk0Mn0.DcYuX4gQYuLeCFqf-fyZhr2Oe0D0ebsHmHPFyqFVWrlV6WtNEfDNjmjkm4XPumfcMD9lytWzzGwGecan3APf2g&quot;,
+  &quot;expiresIn&quot;: 300,
+  &quot;tenant&quot;: &quot;zafira&quot;
+}
+</code></pre>
+
+<hr />
+<h2 id="step-2-get-user-profile">Step 2: Get user profile</h2>
+<p><strong>Request</strong></p>
+<p><strong>Method:</strong> GET,
+<strong>URI:</strong> ~/zafira-ws/api/users/profile?username={username}
+<strong>Headers:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Datatype</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Authorization</td>
+<td align="center">String</td>
+<td align="center">Type + Access token</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Data:</strong> No</p>
+<p><strong>URI example:</strong> ~/zafira-ws/api/users/profile?username=qpsdemo</p>
+<p><strong>Response</strong></p>
+<p><strong>Status code:</strong> 200
+<strong>Response Body:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Datatype</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">id</td>
+<td align="center">int</td>
+<td align="center">Unique user identifier</td>
+</tr>
+<tr>
+<td align="center">username</td>
+<td align="center">String</td>
+<td align="center">Credentials</td>
+</tr>
+<tr>
+<td align="center">password</td>
+<td align="center">String</td>
+<td align="center">Credentials</td>
+</tr>
+<tr>
+<td align="center">roles</td>
+<td align="center">String array</td>
+<td align="center">user roles("ROLE_ADMIN", "ROLE_ADMIN", "ROLE_SUPERADMIN")</td>
+</tr>
+<tr>
+<td align="center">permissions</td>
+<td align="center">Object List</td>
+<td align="center">List of user permissions</td>
+</tr>
+<tr>
+<td align="center">preferences</td>
+<td align="center">Object List</td>
+<td align="center">List of user preferences</td>
+</tr>
+<tr>
+<td align="center">lastLogin</td>
+<td align="center">Date</td>
+<td align="center">Date of users last login</td>
+</tr>
+<tr>
+<td align="center">source</td>
+<td align="center">Object</td>
+<td align="center">"INTERNAL", "LDAP"</td>
+</tr>
+<tr>
+<td align="center">status</td>
+<td align="center">Object</td>
+<td align="center">Logged in or not("ACTIVE","INACTIVE")</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Body example:</strong></p>
+<pre><code class="json">{
+  &quot;id&quot;:2,
+  &quot;username&quot;:&quot;admin&quot;,
+  &quot;password&quot;:&quot;zRNkEjrbdBB70DVZA1leMqdJy+9uJCpK&quot;,
+  &quot;roles&quot;:[&quot;ROLE_ADMIN&quot;],
+  &quot;permissions&quot;:[{
+                    &quot;id&quot;:1,
+                    &quot;modifiedAt&quot;:null,
+                    &quot;createdAt&quot;:null,
+                    &quot;name&quot;:&quot;VIEW_HIDDEN_DASHBOARDS&quot;,
+                    &quot;block&quot;:null
+                    }],
+  &quot;preferences&quot;:[{
+                    &quot;id&quot;:6,
+                    &quot;modifiedAt&quot;:1544195439376,
+                    &quot;createdAt&quot;:1544195439376,
+                    &quot;name&quot;:&quot;THEME&quot;,
+                    &quot;value&quot;:&quot;32&quot;
+                    }],
+ &quot;lastLogin&quot;:1544617640554,
+ &quot;source&quot;:&quot;INTERNAL&quot;,
+ &quot;status&quot;:&quot;ACTIVE&quot;
+ }
+</code></pre>
+
+<hr />
+<h2 id="step-3-create-a-test-suite">Step 3: Create a test suite</h2>
+<p><strong>Request</strong></p>
+<p><strong>Method:</strong> POST,
+<strong>URI:</strong> ~/zafira-ws/api/tests/suites
+<strong>Headers:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Datatype</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Authorization</td>
+<td align="center">String</td>
+<td align="center">Type + Access token</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Data:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Datatype</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">userId</td>
+<td align="center">int</td>
+<td align="center">Unique user identifier</td>
+</tr>
+<tr>
+<td align="center">fileName</td>
+<td align="center">String</td>
+<td align="center">Name of XML suite</td>
+</tr>
+<tr>
+<td align="center">name</td>
+<td align="center">String</td>
+<td align="center">Suite name</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Body example:</strong></p>
+<pre><code class="json">{
+   &quot;fileName&quot;: &quot;ExampleFileName&quot;,
+   &quot;name&quot;: &quot;ExampleSuiteName&quot;,
+   &quot;userId&quot;: 2
+ }
+</code></pre>
+
+<p><strong>Response</strong></p>
+<p><strong>Status code:</strong> 200
+<strong>Response Body:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Datatype</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">id</td>
+<td align="center">int</td>
+<td align="center">Unique test suite identifier</td>
+</tr>
+<tr>
+<td align="center">name</td>
+<td align="center">String</td>
+<td align="center">Suite name</td>
+</tr>
+<tr>
+<td align="center">fileName</td>
+<td align="center">String</td>
+<td align="center">Name of XML suite</td>
+</tr>
+<tr>
+<td align="center">userId</td>
+<td align="center">int</td>
+<td align="center">Unique user identifier</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Body example:</strong></p>
+<pre><code class="json">{
+  &quot;id&quot;: 8,
+  &quot;name&quot;: &quot;ExampleSuiteName&quot;,
+  &quot;fileName&quot;: &quot;ExampleFileName&quot;,
+  &quot;userId&quot;: 2
+}
+</code></pre>
+
+<hr />
+<h2 id="step-4-create-a-job">Step 4: Create a job</h2>
+<p><strong>Request</strong></p>
+<p><strong>Method:</strong> POST,
+<strong>URI:</strong> ~/zafira-ws/api/jobs
+<strong>Headers:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Datatype</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Authorization</td>
+<td align="center">String</td>
+<td align="center">Type + Access token</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Data:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Datatype</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">jenkinsHost</td>
+<td align="center">String</td>
+<td align="center">Jenkins host</td>
+</tr>
+<tr>
+<td align="center">jobURL</td>
+<td align="center">String</td>
+<td align="center">Job url</td>
+</tr>
+<tr>
+<td align="center">name</td>
+<td align="center">String</td>
+<td align="center">Job name</td>
+</tr>
+<tr>
+<td align="center">userId</td>
+<td align="center">int</td>
+<td align="center">Unique test suite identifier</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Body example:</strong></p>
+<pre><code class="json">{
+   &quot;jenkinsHost&quot;: &quot;ExampleJenkinsHost&quot;,
+   &quot;jobURL&quot;: &quot;ExampleJobURL&quot;,
+   &quot;name&quot;: &quot;ExampleJobName&quot;,
+   &quot;userId&quot;: 2
+ }
+</code></pre>
+
+<p><strong>Response</strong></p>
+<p><strong>Status code:</strong> 200
+<strong>Response Body:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Datatype</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">id</td>
+<td align="center">int</td>
+<td align="center">Unique job identifier</td>
+</tr>
+<tr>
+<td align="center">jenkinsHost</td>
+<td align="center">String</td>
+<td align="center">Jenkins host</td>
+</tr>
+<tr>
+<td align="center">jobURL</td>
+<td align="center">String</td>
+<td align="center">Job url</td>
+</tr>
+<tr>
+<td align="center">name</td>
+<td align="center">String</td>
+<td align="center">Job name</td>
+</tr>
+<tr>
+<td align="center">userId</td>
+<td align="center">int</td>
+<td align="center">Unique user identifier</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Body example:</strong></p>
+<pre><code class="json">{
+  &quot;id&quot;: 8,
+  &quot;name&quot;: &quot;ExampleJobName&quot;,
+  &quot;jobURL&quot;: &quot;ExampleJobURL&quot;,
+  &quot;jenkinsHost&quot;: &quot;ExampleJenkinsHost&quot;,
+  &quot;userId&quot;: 2
+}
+</code></pre>
+
+<hr />
+<h2 id="step-5-create-a-test-run">Step 5: Create a test run</h2>
+<p>Registers a test run on Zafira UI
+<strong>Request</strong></p>
+<p><strong>Method:</strong> POST,
+<strong>URI:</strong> ~/zafira-ws/api/tests/runs
+<strong>Headers:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Datatype</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Authorization</td>
+<td align="center">String</td>
+<td align="center">Type + Access token</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Data:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Datatype</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">jobId</td>
+<td align="center">int</td>
+<td align="center">Unique job identifier</td>
+</tr>
+<tr>
+<td align="center">testSuiteId</td>
+<td align="center">int</td>
+<td align="center">Unique test suite identifier</td>
+</tr>
+<tr>
+<td align="center">buildNumber</td>
+<td align="center">int</td>
+<td align="center">Build number</td>
+</tr>
+<tr>
+<td align="center">startedBy</td>
+<td align="center">String</td>
+<td align="center">One of the values : "SCHEDULER", "UPSTREAM_JOB", "HUMAN"</td>
+</tr>
+<tr>
+<td align="center">driverMode</td>
+<td align="center">String</td>
+<td align="center">One of the values :  METHOD_MODE", "CLASS_MODE", "SUITE_MODE"</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Body example:</strong></p>
+<pre><code class="json">{
+   &quot;buildNumber&quot;: 0,
+   &quot;driverMode&quot;: &quot;METHOD_MODE&quot;,
+   &quot;jobId&quot;: 8,
+   &quot;startedBy&quot;: &quot;HUMAN&quot;,
+   &quot;testSuiteId&quot;: 8
+ }
+</code></pre>
+
+<p><strong>Response</strong></p>
+<p><strong>Status code:</strong> 200
+<strong>Response Body:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Datatype</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">id</td>
+<td align="center">int</td>
+<td align="center">Unique test run identifier</td>
+</tr>
+<tr>
+<td align="center">ciRunId</td>
+<td align="center">String</td>
+<td align="center">CI run id</td>
+</tr>
+<tr>
+<td align="center">jobId</td>
+<td align="center">int</td>
+<td align="center">Job id</td>
+</tr>
+<tr>
+<td align="center">testSuiteId</td>
+<td align="center">int</td>
+<td align="center">Unique test suite identifier</td>
+</tr>
+<tr>
+<td align="center">buildNumber</td>
+<td align="center">int</td>
+<td align="center">Build number</td>
+</tr>
+<tr>
+<td align="center">blocker</td>
+<td align="center">bool</td>
+<td align="center">Unexpected behavior that keeps you from performing all test case steps</td>
+</tr>
+<tr>
+<td align="center">driverMode</td>
+<td align="center">String</td>
+<td align="center">Optional value : "METHOD_MODE", "CLASS_MODE", "SUITE_MODE"</td>
+</tr>
+<tr>
+<td align="center">knownIssue</td>
+<td align="center">bool</td>
+<td align="center">Failing reason in ticket</td>
+</tr>
+<tr>
+<td align="center">reviewed</td>
+<td align="center">bool</td>
+<td align="center">Shows whether a test has been reviewed</td>
+</tr>
+<tr>
+<td align="center">status</td>
+<td align="center">String</td>
+<td align="center">Test run status ("UNKNOWN", "IN_PROGRESS", "PASSED", "FAILED", "SKIPPED", "ABORTED", "QUEUED")</td>
+</tr>
+<tr>
+<td align="center">driverMode</td>
+<td align="center">String</td>
+<td align="center">One of the values :  METHOD_MODE", "CLASS_MODE", "SUITE_MODE"</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Body example:</strong></p>
+<pre><code class="json">{
+   &quot;id&quot;: 62,
+   &quot;ciRunId&quot;: &quot;e6d88798f-d833-5sgfd-9127-56b602d82599&quot;,
+   &quot;testSuiteId&quot;: 8,
+   &quot;status&quot;: &quot;IN_PROGRESS&quot;,
+   &quot;jobId&quot;: 8,
+   &quot;buildNumber&quot;: 0,
+   &quot;startedBy&quot;: &quot;HUMAN&quot;,
+   &quot;knownIssue&quot;: false,
+   &quot;blocker&quot;: false,
+   &quot;driverMode&quot;: &quot;METHOD_MODE&quot;,
+   &quot;reviewed&quot;: false
+ }
+</code></pre>
+
+<hr />
+<h2 id="step-6-create-a-test-case">Step 6: Create a test case</h2>
+<p><strong>Request</strong></p>
+<p><strong>Method:</strong> POST,
+<strong>URI:</strong> ~/zafira-ws/api/tests/cases
+<strong>Headers:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Datatype</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Authorization</td>
+<td align="center">String</td>
+<td align="center">Type + Access token</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Data:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Datatype</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">primaryOwnerId</td>
+<td align="center">int</td>
+<td align="center">Unique identifier of test case creator</td>
+</tr>
+<tr>
+<td align="center">testClass</td>
+<td align="center">String</td>
+<td align="center">Name of test class</td>
+</tr>
+<tr>
+<td align="center">testMethod</td>
+<td align="center">String</td>
+<td align="center">Name of test method</td>
+</tr>
+<tr>
+<td align="center">testSuiteId</td>
+<td align="center">int</td>
+<td align="center">Unique test suite identifier</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Body example:</strong></p>
+<pre><code class="json">{
+   &quot;primaryOwnerId&quot;: 2,
+   &quot;testClass&quot;: &quot;ExampleTestClassName&quot;,
+   &quot;testMethod&quot;: &quot;ExampleTestName&quot;,
+   &quot;testSuiteId&quot;: 8
+ }
+</code></pre>
+
+<p><strong>Response</strong></p>
+<p><strong>Status code:</strong> 200
+<strong>Response Body:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Datatype</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">id</td>
+<td align="center">int</td>
+<td align="center">Unique identifier of test case</td>
+</tr>
+<tr>
+<td align="center">primaryOwnerId</td>
+<td align="center">int</td>
+<td align="center">Unique identifier of test case creator</td>
+</tr>
+<tr>
+<td align="center">testClass</td>
+<td align="center">String</td>
+<td align="center">Name of test class</td>
+</tr>
+<tr>
+<td align="center">testMethod</td>
+<td align="center">String</td>
+<td align="center">Name of test method</td>
+</tr>
+<tr>
+<td align="center">testSuiteId</td>
+<td align="center">int</td>
+<td align="center">Unique test suite identifier</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Body example:</strong></p>
+<pre><code class="json">{
+   &quot;id&quot;: 23,
+   &quot;testClass&quot;: &quot;ExampleTestClassName&quot;,
+   &quot;testMethod&quot;: &quot;ExampleTestMethod&quot;,
+   &quot;testSuiteId&quot;: 8,
+   &quot;primaryOwnerId&quot;: 2
+ }
+</code></pre>
+
+<hr />
+<h2 id="step-7-start-a-test">Step 7: Start a test</h2>
+<p>Registers a test start on Zafira UI
+<strong>Request</strong></p>
+<p><strong>Method:</strong> POST,
+<strong>URI:</strong> ~/zafira-ws/api/tests
+<strong>Headers:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Datatype</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Authorization</td>
+<td align="center">String</td>
+<td align="center">Type + Access token</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Data:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Datatype</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">testRunId</td>
+<td align="center">int</td>
+<td align="center">Unique test run identifier</td>
+</tr>
+<tr>
+<td align="center">testCaseId</td>
+<td align="center">int</td>
+<td align="center">Unique identifier of test case</td>
+</tr>
+<tr>
+<td align="center">name</td>
+<td align="center">String</td>
+<td align="center">Test name</td>
+</tr>
+<tr>
+<td align="center">status</td>
+<td align="center">String</td>
+<td align="center">Test run status ("UNKNOWN", "IN_PROGRESS", "PASSED", "FAILED", "SKIPPED", "ABORTED", "QUEUED")</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Body example:</strong></p>
+<pre><code class="json">{
+   &quot;name&quot;: &quot;ExampleTestName&quot;,
+   &quot;status&quot;: &quot;IN_PROGRESS&quot;,
+   &quot;testCaseId&quot;: 23,
+   &quot;testRunId&quot;: 62
+ }
+</code></pre>
+
+<p><strong>Response</strong></p>
+<p><strong>Status code:</strong> 200
+<strong>Response Body:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Datatype</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">id</td>
+<td align="center">int</td>
+<td align="center">Unique test identifier</td>
+</tr>
+<tr>
+<td align="center">name</td>
+<td align="center">String</td>
+<td align="center">Test name</td>
+</tr>
+<tr>
+<td align="center">status</td>
+<td align="center">String</td>
+<td align="center">Test run status ("UNKNOWN", "IN_PROGRESS", "PASSED", "FAILED", "SKIPPED", "ABORTED", "QUEUED")</td>
+</tr>
+<tr>
+<td align="center">testRunId</td>
+<td align="center">int</td>
+<td align="center">Unique test run identifier</td>
+</tr>
+<tr>
+<td align="center">testCaseId</td>
+<td align="center">int</td>
+<td align="center">Unique identifier of test case</td>
+</tr>
+<tr>
+<td align="center">retry</td>
+<td align="center">int</td>
+<td align="center">Shows the count the test ran</td>
+</tr>
+<tr>
+<td align="center">knownIssue</td>
+<td align="center">bool</td>
+<td align="center">Failing reason in ticket</td>
+</tr>
+<tr>
+<td align="center">blocker</td>
+<td align="center">bool</td>
+<td align="center">Unexpected behavior that keeps you from performing all test case steps</td>
+</tr>
+<tr>
+<td align="center">needRerun</td>
+<td align="center">bool</td>
+<td align="center">Flag that indicates whether a reran is needed</td>
+</tr>
+<tr>
+<td align="center">artifacts</td>
+<td align="center">Object array</td>
+<td align="center">List of test artifacts(logs, screenshots etc)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Body example:</strong></p>
+<pre><code class="json">{
+  &quot;id&quot;: 222,
+  &quot;name&quot;: &quot;ExampleTestName&quot;,
+  &quot;status&quot;: &quot;IN_PROGRESS&quot;,
+  &quot;testRunId&quot;: 62,
+  &quot;testCaseId&quot;: 8,
+  &quot;retry&quot;: 0,
+  &quot;knownIssue&quot;: false,
+  &quot;blocker&quot;: false,
+  &quot;needRerun&quot;: false,
+  &quot;artifacts&quot;: []
+}
+</code></pre>
+
+<hr />
+<h2 id="step-8-finish-a-test">Step 8: Finish a test</h2>
+<p><strong>Request</strong></p>
+<p><strong>Method:</strong> POST,
+<strong>URI:</strong> ~/zafira-ws/api/tests/{testId}/finish
+<strong>Headers:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Datatype</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Authorization</td>
+<td align="center">String</td>
+<td align="center">Type + Access token</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Data:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Datatype</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">id</td>
+<td align="center">int</td>
+<td align="center">Unique test identifier</td>
+</tr>
+<tr>
+<td align="center">name</td>
+<td align="center">String</td>
+<td align="center">Test name</td>
+</tr>
+<tr>
+<td align="center">status</td>
+<td align="center">String</td>
+<td align="center">Test run status ("UNKNOWN", "IN_PROGRESS", "PASSED", "FAILED", "SKIPPED", "ABORTED", "QUEUED")</td>
+</tr>
+<tr>
+<td align="center">testRunId</td>
+<td align="center">int</td>
+<td align="center">Unique test run identifier</td>
+</tr>
+<tr>
+<td align="center">testCaseId</td>
+<td align="center">int</td>
+<td align="center">Unique identifier of test case</td>
+</tr>
+<tr>
+<td align="center">retry</td>
+<td align="center">int</td>
+<td align="center">Shows the count the test ran</td>
+</tr>
+<tr>
+<td align="center">knownIssue</td>
+<td align="center">bool</td>
+<td align="center">Failing reason in ticket</td>
+</tr>
+<tr>
+<td align="center">blocker</td>
+<td align="center">bool</td>
+<td align="center">Unexpected behavior that keeps you from performing all test case steps</td>
+</tr>
+<tr>
+<td align="center">needRerun</td>
+<td align="center">bool</td>
+<td align="center">Flag that indicates whether a reran is needed</td>
+</tr>
+<tr>
+<td align="center">artifacts</td>
+<td align="center">Object array</td>
+<td align="center">List of test artifacts(logs, screenshots etc)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Request URI example:</strong> ~/zafira-ws/api/tests/runs/222/finish</p>
+<p><strong>Body example:</strong></p>
+<pre><code class="json">{
+   &quot;id&quot;: 222,
+   &quot;name&quot;: &quot;ExampleTestName&quot;,
+   &quot;status&quot;: &quot;FAILED&quot;,
+   &quot;testRunId&quot;: 62,
+   &quot;testCaseId&quot;: 8,
+   &quot;retry&quot;: 0,
+   &quot;knownIssue&quot;: true,
+   &quot;blocker&quot;: false,
+   &quot;needRerun&quot;: false,
+   &quot;artifacts&quot;: []
+ }
+</code></pre>
+
+<p><strong>Response</strong></p>
+<p><strong>Status code:</strong> 200
+<strong>Response Body:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Datatype</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">id</td>
+<td align="center">int</td>
+<td align="center">Unique test identifier</td>
+</tr>
+<tr>
+<td align="center">name</td>
+<td align="center">String</td>
+<td align="center">Test name</td>
+</tr>
+<tr>
+<td align="center">status</td>
+<td align="center">String</td>
+<td align="center">Test run status ("UNKNOWN", "IN_PROGRESS", "PASSED", "FAILED", "SKIPPED", "ABORTED", "QUEUED")</td>
+</tr>
+<tr>
+<td align="center">testRunId</td>
+<td align="center">int</td>
+<td align="center">Unique test run identifier</td>
+</tr>
+<tr>
+<td align="center">testCaseId</td>
+<td align="center">int</td>
+<td align="center">Unique identifier of test case</td>
+</tr>
+<tr>
+<td align="center">retry</td>
+<td align="center">int</td>
+<td align="center">Shows the count the test ran</td>
+</tr>
+<tr>
+<td align="center">knownIssue</td>
+<td align="center">bool</td>
+<td align="center">Failing reason in ticket</td>
+</tr>
+<tr>
+<td align="center">blocker</td>
+<td align="center">bool</td>
+<td align="center">Unexpected behavior that keeps you from performing all test case steps</td>
+</tr>
+<tr>
+<td align="center">needRerun</td>
+<td align="center">bool</td>
+<td align="center">Flag that indicates whether a reran is needed</td>
+</tr>
+<tr>
+<td align="center">artifacts</td>
+<td align="center">Object array</td>
+<td align="center">List of test artifacts(logs, screenshots etc)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Body example:</strong></p>
+<pre><code class="json">{
+   &quot;id&quot;: 222,
+   &quot;name&quot;: &quot;ExampleTestName&quot;,
+   &quot;status&quot;: &quot;FAILED&quot;,
+   &quot;testRunId&quot;: 62,
+   &quot;testCaseId&quot;: 8,
+   &quot;retry&quot;: 0,
+   &quot;knownIssue&quot;: true,
+   &quot;blocker&quot;: false,
+   &quot;needRerun&quot;: false,
+   &quot;artifacts&quot;: []
+}
+</code></pre>
+
+<hr />
+<h2 id="step-9-finish-a-test-run">Step 9: Finish a test run</h2>
+<p><strong>Request</strong></p>
+<p><strong>Method:</strong> POST,
+<strong>URI:</strong> ~/zafira-ws/api/tests/runs/{testRunId}/finish
+<strong>Headers:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Datatype</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Authorization</td>
+<td align="center">String</td>
+<td align="center">Type + Access token</td>
+</tr>
+</tbody>
+</table>
+<p><strong>URI example:</strong> ~/zafira-ws/api/tests/runs/62/finish</p>
+<p><strong>Body:</strong> No</p>
+<p><strong>Response</strong></p>
+<p><strong>Status code:</strong> 200
+<strong>Response Body:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Datatype</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">id</td>
+<td align="center">int</td>
+<td align="center">Unique test run identifier</td>
+</tr>
+<tr>
+<td align="center">ciRunId</td>
+<td align="center">String</td>
+<td align="center">CI run id</td>
+</tr>
+<tr>
+<td align="center">testSuiteId</td>
+<td align="center">int</td>
+<td align="center">Unique test suite identifier</td>
+</tr>
+<tr>
+<td align="center">status</td>
+<td align="center">String</td>
+<td align="center">Test run status ("UNKNOWN", "IN_PROGRESS", "PASSED", "FAILED", "SKIPPED", "ABORTED", "QUEUED")</td>
+</tr>
+<tr>
+<td align="center">jobId</td>
+<td align="center">int</td>
+<td align="center">Job id</td>
+</tr>
+<tr>
+<td align="center">buildNumber</td>
+<td align="center">int</td>
+<td align="center">Build number</td>
+</tr>
+<tr>
+<td align="center">startedBy</td>
+<td align="center">String</td>
+<td align="center">One of the values : "SCHEDULER", "UPSTREAM_JOB", "HUMAN"</td>
+</tr>
+<tr>
+<td align="center">knownIssue</td>
+<td align="center">bool</td>
+<td align="center">Failing reason in ticket</td>
+</tr>
+<tr>
+<td align="center">blocker</td>
+<td align="center">bool</td>
+<td align="center">Unexpected behavior that keeps you from performing all test case steps</td>
+</tr>
+<tr>
+<td align="center">driverMode</td>
+<td align="center">String</td>
+<td align="center">One of the values :  METHOD_MODE", "CLASS_MODE", "SUITE_MODE"</td>
+</tr>
+<tr>
+<td align="center">reviewed</td>
+<td align="center">bool</td>
+<td align="center">Shows whether a test has been reviewed</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Body example:</strong>
+```json
+{
+  "id": 62,
+  "ciRunId": "e6d88798f-d833-5sgfd-9127-56b602d82599",
+  "testSuiteId": 8,
+  "status": "FAILED",
+  "jobId": 8,
+  "buildNumber": 0,
+  "startedBy": "HUMAN",
+  "knownIssue": true,
+  "blocker": false,
+  "driverMode": "METHOD_MODE",
+  "reviewed": false
+}</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../client_setup/" title="Client setup" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Client setup
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../integrations/" title="Integrations" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Integrations
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.583bbe55.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
