@@ -794,27 +794,17 @@ None</p>
 </table>
 <hr />
 <h4 id="step-4-create-a-job">Step 4: Create a job</h4>
+<p><strong>POST: /zafira-ws/api/jobs</strong></p>
+<p><strong>Headers:</strong> Authorization=Bearer {accessToken}</p>
 <p><strong>Request</strong></p>
-<p><strong>Method:</strong> POST,
-<strong>URI:</strong> ~/zafira-ws/api/jobs
-<strong>Headers:</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">Field</th>
-<th align="center">Datatype</th>
-<th align="center">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Authorization</td>
-<td align="center">String</td>
-<td align="center">Type + Access token</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Data:</strong></p>
+<pre><code class="json">{
+   &quot;jenkinsHost&quot;: &quot;ExampleJenkinsHost&quot;,
+   &quot;jobURL&quot;: &quot;ExampleJobURL&quot;,
+   &quot;name&quot;: &quot;ExampleJobName&quot;,
+   &quot;userId&quot;: 2
+ }
+</code></pre>
+
 <table>
 <thead>
 <tr>
@@ -846,18 +836,16 @@ None</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Body example:</strong></p>
+<p><strong>Response</strong></p>
 <pre><code class="json">{
-   &quot;jenkinsHost&quot;: &quot;ExampleJenkinsHost&quot;,
-   &quot;jobURL&quot;: &quot;ExampleJobURL&quot;,
-   &quot;name&quot;: &quot;ExampleJobName&quot;,
-   &quot;userId&quot;: 2
- }
+  &quot;id&quot;: 8,
+  &quot;name&quot;: &quot;ExampleJobName&quot;,
+  &quot;jobURL&quot;: &quot;ExampleJobURL&quot;,
+  &quot;jenkinsHost&quot;: &quot;ExampleJenkinsHost&quot;,
+  &quot;userId&quot;: 2
+}
 </code></pre>
 
-<p><strong>Response</strong></p>
-<p><strong>Status code:</strong> 200
-<strong>Response Body:</strong></p>
 <table>
 <thead>
 <tr>
@@ -894,39 +882,20 @@ None</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Body example:</strong></p>
+<hr />
+<h4 id="step-5-create-a-test-run">Step 5: Create a test run</h4>
+<p><strong>POST: /zafira-ws/api/tests/runs</strong></p>
+<p><strong>Headers:</strong> Authorization=Bearer {accessToken}</p>
+<p><strong>Request</strong></p>
 <pre><code class="json">{
-  &quot;id&quot;: 8,
-  &quot;name&quot;: &quot;ExampleJobName&quot;,
-  &quot;jobURL&quot;: &quot;ExampleJobURL&quot;,
-  &quot;jenkinsHost&quot;: &quot;ExampleJenkinsHost&quot;,
-  &quot;userId&quot;: 2
-}
+   &quot;buildNumber&quot;: 0,
+   &quot;driverMode&quot;: &quot;METHOD_MODE&quot;,
+   &quot;jobId&quot;: 8,
+   &quot;startedBy&quot;: &quot;HUMAN&quot;,
+   &quot;testSuiteId&quot;: 8
+ }
 </code></pre>
 
-<h4 id="step-5-create-a-test-run">Step 5: Create a test run</h4>
-<p>Registers a test run on Zafira UI
-<strong>Request</strong></p>
-<p><strong>Method:</strong> POST,
-<strong>URI:</strong> ~/zafira-ws/api/tests/runs
-<strong>Headers:</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">Field</th>
-<th align="center">Datatype</th>
-<th align="center">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Authorization</td>
-<td align="center">String</td>
-<td align="center">Type + Access token</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Data:</strong></p>
 <table>
 <thead>
 <tr>
@@ -963,19 +932,22 @@ None</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Body example:</strong></p>
+<p><strong>Response</strong></p>
 <pre><code class="json">{
-   &quot;buildNumber&quot;: 0,
-   &quot;driverMode&quot;: &quot;METHOD_MODE&quot;,
+   &quot;id&quot;: 62,
+   &quot;ciRunId&quot;: &quot;e6d88798f-d833-5sgfd-9127-56b602d82599&quot;,
+   &quot;testSuiteId&quot;: 8,
+   &quot;status&quot;: &quot;IN_PROGRESS&quot;,
    &quot;jobId&quot;: 8,
+   &quot;buildNumber&quot;: 0,
    &quot;startedBy&quot;: &quot;HUMAN&quot;,
-   &quot;testSuiteId&quot;: 8
+   &quot;knownIssue&quot;: false,
+   &quot;blocker&quot;: false,
+   &quot;driverMode&quot;: &quot;METHOD_MODE&quot;,
+   &quot;reviewed&quot;: false
  }
 </code></pre>
 
-<p><strong>Response</strong></p>
-<p><strong>Status code:</strong> 200
-<strong>Response Body:</strong></p>
 <table>
 <thead>
 <tr>
@@ -1042,76 +1014,11 @@ None</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Body example:</strong></p>
-<pre><code class="json">{
-   &quot;id&quot;: 62,
-   &quot;ciRunId&quot;: &quot;e6d88798f-d833-5sgfd-9127-56b602d82599&quot;,
-   &quot;testSuiteId&quot;: 8,
-   &quot;status&quot;: &quot;IN_PROGRESS&quot;,
-   &quot;jobId&quot;: 8,
-   &quot;buildNumber&quot;: 0,
-   &quot;startedBy&quot;: &quot;HUMAN&quot;,
-   &quot;knownIssue&quot;: false,
-   &quot;blocker&quot;: false,
-   &quot;driverMode&quot;: &quot;METHOD_MODE&quot;,
-   &quot;reviewed&quot;: false
- }
-</code></pre>
-
+<hr />
 <h4 id="step-6-create-a-test-case">Step 6: Create a test case</h4>
+<p><strong>POST: /zafira-ws/api/tests/cases</strong></p>
+<p><strong>Headers:</strong> Authorization=Bearer {accessToken}</p>
 <p><strong>Request</strong></p>
-<p><strong>Method:</strong> POST,
-<strong>URI:</strong> ~/zafira-ws/api/tests/cases
-<strong>Headers:</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">Field</th>
-<th align="center">Datatype</th>
-<th align="center">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Authorization</td>
-<td align="center">String</td>
-<td align="center">Type + Access token</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Data:</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">Field</th>
-<th align="center">Datatype</th>
-<th align="center">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">primaryOwnerId</td>
-<td align="center">int</td>
-<td align="center">Unique identifier of test case creator</td>
-</tr>
-<tr>
-<td align="center">testClass</td>
-<td align="center">String</td>
-<td align="center">Name of test class</td>
-</tr>
-<tr>
-<td align="center">testMethod</td>
-<td align="center">String</td>
-<td align="center">Name of test method</td>
-</tr>
-<tr>
-<td align="center">testSuiteId</td>
-<td align="center">int</td>
-<td align="center">Unique test suite identifier</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Body example:</strong></p>
 <pre><code class="json">{
    &quot;primaryOwnerId&quot;: 2,
    &quot;testClass&quot;: &quot;ExampleTestClassName&quot;,
@@ -1120,9 +1027,6 @@ None</p>
  }
 </code></pre>
 
-<p><strong>Response</strong></p>
-<p><strong>Status code:</strong> 200
-<strong>Response Body:</strong></p>
 <table>
 <thead>
 <tr>
@@ -1132,11 +1036,6 @@ None</p>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td align="center">id</td>
-<td align="center">int</td>
-<td align="center">Unique identifier of test case</td>
-</tr>
 <tr>
 <td align="center">primaryOwnerId</td>
 <td align="center">int</td>
@@ -1159,7 +1058,7 @@ None</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Body example:</strong></p>
+<p><strong>Response</strong></p>
 <pre><code class="json">{
    &quot;id&quot;: 23,
    &quot;testClass&quot;: &quot;ExampleTestClassName&quot;,
@@ -1169,72 +1068,6 @@ None</p>
  }
 </code></pre>
 
-<h4 id="step-7-start-a-test">Step 7: Start a test</h4>
-<p>Registers a test start on Zafira UI
-<strong>Request</strong></p>
-<p><strong>Method:</strong> POST,
-<strong>URI:</strong> ~/zafira-ws/api/tests
-<strong>Headers:</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">Field</th>
-<th align="center">Datatype</th>
-<th align="center">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Authorization</td>
-<td align="center">String</td>
-<td align="center">Type + Access token</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Data:</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">Field</th>
-<th align="center">Datatype</th>
-<th align="center">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">testRunId</td>
-<td align="center">int</td>
-<td align="center">Unique test run identifier</td>
-</tr>
-<tr>
-<td align="center">testCaseId</td>
-<td align="center">int</td>
-<td align="center">Unique identifier of test case</td>
-</tr>
-<tr>
-<td align="center">name</td>
-<td align="center">String</td>
-<td align="center">Test name</td>
-</tr>
-<tr>
-<td align="center">status</td>
-<td align="center">String</td>
-<td align="center">Test run status ("UNKNOWN", "IN_PROGRESS", "PASSED", "FAILED", "SKIPPED", "ABORTED", "QUEUED")</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Body example:</strong></p>
-<pre><code class="json">{
-   &quot;name&quot;: &quot;ExampleTestName&quot;,
-   &quot;status&quot;: &quot;IN_PROGRESS&quot;,
-   &quot;testCaseId&quot;: 23,
-   &quot;testRunId&quot;: 62
- }
-</code></pre>
-
-<p><strong>Response</strong></p>
-<p><strong>Status code:</strong> 200
-<strong>Response Body:</strong></p>
 <table>
 <thead>
 <tr>
@@ -1247,18 +1080,52 @@ None</p>
 <tr>
 <td align="center">id</td>
 <td align="center">int</td>
-<td align="center">Unique test identifier</td>
+<td align="center">Unique identifier of test case</td>
 </tr>
 <tr>
-<td align="center">name</td>
-<td align="center">String</td>
-<td align="center">Test name</td>
+<td align="center">primaryOwnerId</td>
+<td align="center">int</td>
+<td align="center">Unique identifier of test case creator</td>
 </tr>
 <tr>
-<td align="center">status</td>
+<td align="center">testClass</td>
 <td align="center">String</td>
-<td align="center">Test run status ("UNKNOWN", "IN_PROGRESS", "PASSED", "FAILED", "SKIPPED", "ABORTED", "QUEUED")</td>
+<td align="center">Name of test class</td>
 </tr>
+<tr>
+<td align="center">testMethod</td>
+<td align="center">String</td>
+<td align="center">Name of test method</td>
+</tr>
+<tr>
+<td align="center">testSuiteId</td>
+<td align="center">int</td>
+<td align="center">Unique test suite identifier</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="step-7-start-a-test">Step 7: Start a test</h4>
+<p><strong>POST: /zafira-ws/api/tests</strong></p>
+<p><strong>Headers:</strong> Authorization=Bearer {accessToken}</p>
+<p><strong>Request</strong></p>
+<pre><code class="json">{
+   &quot;name&quot;: &quot;ExampleTestName&quot;,
+   &quot;status&quot;: &quot;IN_PROGRESS&quot;,
+   &quot;testCaseId&quot;: 23,
+   &quot;testRunId&quot;: 62
+ }
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Datatype</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td align="center">testRunId</td>
 <td align="center">int</td>
@@ -1270,33 +1137,18 @@ None</p>
 <td align="center">Unique identifier of test case</td>
 </tr>
 <tr>
-<td align="center">retry</td>
-<td align="center">int</td>
-<td align="center">Shows the count the test ran</td>
+<td align="center">name</td>
+<td align="center">String</td>
+<td align="center">Test name</td>
 </tr>
 <tr>
-<td align="center">knownIssue</td>
-<td align="center">bool</td>
-<td align="center">Failing reason in ticket</td>
-</tr>
-<tr>
-<td align="center">blocker</td>
-<td align="center">bool</td>
-<td align="center">Unexpected behavior that keeps you from performing all test case steps</td>
-</tr>
-<tr>
-<td align="center">needRerun</td>
-<td align="center">bool</td>
-<td align="center">Flag that indicates whether a reran is needed</td>
-</tr>
-<tr>
-<td align="center">artifacts</td>
-<td align="center">Object array</td>
-<td align="center">List of test artifacts(logs, screenshots etc)</td>
+<td align="center">status</td>
+<td align="center">String</td>
+<td align="center">Test run status ("UNKNOWN", "IN_PROGRESS", "PASSED", "FAILED", "SKIPPED", "ABORTED", "QUEUED")</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Body example:</strong></p>
+<p><strong>Response</strong></p>
 <pre><code class="json">{
   &quot;id&quot;: 222,
   &quot;name&quot;: &quot;ExampleTestName&quot;,
@@ -1311,28 +1163,6 @@ None</p>
 }
 </code></pre>
 
-<h4 id="step-8-finish-a-test">Step 8: Finish a test</h4>
-<p><strong>Request</strong></p>
-<p><strong>Method:</strong> POST,
-<strong>URI:</strong> ~/zafira-ws/api/tests/{testId}/finish
-<strong>Headers:</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">Field</th>
-<th align="center">Datatype</th>
-<th align="center">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Authorization</td>
-<td align="center">String</td>
-<td align="center">Type + Access token</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Data:</strong></p>
 <table>
 <thead>
 <tr>
@@ -1394,8 +1224,11 @@ None</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Request URI example:</strong> ~/zafira-ws/api/tests/runs/222/finish</p>
-<p><strong>Body example:</strong></p>
+<hr />
+<h4 id="step-8-finish-a-test">Step 8: Finish a test</h4>
+<p><strong>POST: /zafira-ws/api/tests/{testId}/finish</strong></p>
+<p><strong>Headers:</strong> Authorization=Bearer {accessToken}</p>
+<p><strong>Request</strong></p>
 <pre><code class="json">{
    &quot;id&quot;: 222,
    &quot;name&quot;: &quot;ExampleTestName&quot;,
@@ -1410,9 +1243,6 @@ None</p>
  }
 </code></pre>
 
-<p><strong>Response</strong></p>
-<p><strong>Status code:</strong> 200
-<strong>Response Body:</strong></p>
 <table>
 <thead>
 <tr>
@@ -1474,7 +1304,7 @@ None</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Body example:</strong></p>
+<p><strong>Response</strong></p>
 <pre><code class="json">{
    &quot;id&quot;: 222,
    &quot;name&quot;: &quot;ExampleTestName&quot;,
@@ -1489,11 +1319,6 @@ None</p>
 }
 </code></pre>
 
-<h4 id="step-9-finish-a-test-run">Step 9: Finish a test run</h4>
-<p><strong>Request</strong></p>
-<p><strong>Method:</strong> POST,
-<strong>URI:</strong> ~/zafira-ws/api/tests/runs/{testRunId}/finish
-<strong>Headers:</strong></p>
 <table>
 <thead>
 <tr>
@@ -1504,17 +1329,79 @@ None</p>
 </thead>
 <tbody>
 <tr>
-<td align="center">Authorization</td>
+<td align="center">id</td>
+<td align="center">int</td>
+<td align="center">Unique test identifier</td>
+</tr>
+<tr>
+<td align="center">name</td>
 <td align="center">String</td>
-<td align="center">Type + Access token</td>
+<td align="center">Test name</td>
+</tr>
+<tr>
+<td align="center">status</td>
+<td align="center">String</td>
+<td align="center">Test run status ("UNKNOWN", "IN_PROGRESS", "PASSED", "FAILED", "SKIPPED", "ABORTED", "QUEUED")</td>
+</tr>
+<tr>
+<td align="center">testRunId</td>
+<td align="center">int</td>
+<td align="center">Unique test run identifier</td>
+</tr>
+<tr>
+<td align="center">testCaseId</td>
+<td align="center">int</td>
+<td align="center">Unique identifier of test case</td>
+</tr>
+<tr>
+<td align="center">retry</td>
+<td align="center">int</td>
+<td align="center">Shows the count the test ran</td>
+</tr>
+<tr>
+<td align="center">knownIssue</td>
+<td align="center">bool</td>
+<td align="center">Failing reason in ticket</td>
+</tr>
+<tr>
+<td align="center">blocker</td>
+<td align="center">bool</td>
+<td align="center">Unexpected behavior that keeps you from performing all test case steps</td>
+</tr>
+<tr>
+<td align="center">needRerun</td>
+<td align="center">bool</td>
+<td align="center">Flag that indicates whether a reran is needed</td>
+</tr>
+<tr>
+<td align="center">artifacts</td>
+<td align="center">Object array</td>
+<td align="center">List of test artifacts(logs, screenshots etc)</td>
 </tr>
 </tbody>
 </table>
-<p><strong>URI example:</strong> ~/zafira-ws/api/tests/runs/62/finish</p>
-<p><strong>Body:</strong> No</p>
+<hr />
+<h4 id="step-9-finish-a-test-run">Step 9: Finish a test run</h4>
+<p><strong>POST: /zafira-ws/api/tests/runs/{testRunId}/finish</strong></p>
+<p><strong>Headers:</strong> Authorization=Bearer {accessToken}</p>
+<p><strong>Request</strong>
+None</p>
 <p><strong>Response</strong></p>
-<p><strong>Status code:</strong> 200
-<strong>Response Body:</strong></p>
+<pre><code class="json">{
+  &quot;id&quot;: 62,
+  &quot;ciRunId&quot;: &quot;e6d88798f-d833-5sgfd-9127-56b602d82599&quot;,
+  &quot;testSuiteId&quot;: 8,
+  &quot;status&quot;: &quot;FAILED&quot;,
+  &quot;jobId&quot;: 8,
+  &quot;buildNumber&quot;: 0,
+  &quot;startedBy&quot;: &quot;HUMAN&quot;,
+  &quot;knownIssue&quot;: true,
+  &quot;blocker&quot;: false,
+  &quot;driverMode&quot;: &quot;METHOD_MODE&quot;,
+  &quot;reviewed&quot;: false
+}
+</code></pre>
+
 <table>
 <thead>
 <tr>
@@ -1581,21 +1468,6 @@ None</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Body example:</strong>
-```json
-{
-  "id": 62,
-  "ciRunId": "e6d88798f-d833-5sgfd-9127-56b602d82599",
-  "testSuiteId": 8,
-  "status": "FAILED",
-  "jobId": 8,
-  "buildNumber": 0,
-  "startedBy": "HUMAN",
-  "knownIssue": true,
-  "blocker": false,
-  "driverMode": "METHOD_MODE",
-  "reviewed": false
-}</p>
                 
                   
                 
