@@ -580,7 +580,6 @@
 </tr>
 </tbody>
 </table>
-<hr />
 <p><strong>Response</strong></p>
 <pre><code class="json">{
   &quot;type&quot;: &quot;Bearer&quot;,
@@ -629,9 +628,8 @@
 </table>
 <h4 id="step-2-get-user-profile">Step 2: Get user profile</h4>
 <p><strong>Request</strong></p>
-<p><strong>Method:</strong> GET,
-<strong>URI:</strong> ~/zafira-ws/api/users/profile?username={username}
-<strong>Headers:</strong></p>
+<p><strong>GET: /zafira-ws/api/users/profile?username={username}</strong></p>
+<p><strong>Headers:</strong></p>
 <table>
 <thead>
 <tr>
@@ -648,11 +646,32 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Data:</strong> No</p>
-<p><strong>URI example:</strong> ~/zafira-ws/api/users/profile?username=qpsdemo</p>
 <p><strong>Response</strong></p>
-<p><strong>Status code:</strong> 200
-<strong>Response Body:</strong></p>
+<pre><code class="json">{
+  &quot;id&quot;:2,
+  &quot;username&quot;:&quot;admin&quot;,
+  &quot;password&quot;:&quot;zRNkEjrbdBB70DVZA1leMqdJy+9uJCpK&quot;,
+  &quot;roles&quot;:[&quot;ROLE_ADMIN&quot;],
+  &quot;permissions&quot;:[{
+                    &quot;id&quot;:1,
+                    &quot;modifiedAt&quot;:null,
+                    &quot;createdAt&quot;:null,
+                    &quot;name&quot;:&quot;VIEW_HIDDEN_DASHBOARDS&quot;,
+                    &quot;block&quot;:null
+                    }],
+  &quot;preferences&quot;:[{
+                    &quot;id&quot;:6,
+                    &quot;modifiedAt&quot;:1544195439376,
+                    &quot;createdAt&quot;:1544195439376,
+                    &quot;name&quot;:&quot;THEME&quot;,
+                    &quot;value&quot;:&quot;32&quot;
+                    }],
+ &quot;lastLogin&quot;:1544617640554,
+ &quot;source&quot;:&quot;INTERNAL&quot;,
+ &quot;status&quot;:&quot;ACTIVE&quot;
+ }
+</code></pre>
+
 <table>
 <thead>
 <tr>
@@ -709,32 +728,6 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Body example:</strong></p>
-<pre><code class="json">{
-  &quot;id&quot;:2,
-  &quot;username&quot;:&quot;admin&quot;,
-  &quot;password&quot;:&quot;zRNkEjrbdBB70DVZA1leMqdJy+9uJCpK&quot;,
-  &quot;roles&quot;:[&quot;ROLE_ADMIN&quot;],
-  &quot;permissions&quot;:[{
-                    &quot;id&quot;:1,
-                    &quot;modifiedAt&quot;:null,
-                    &quot;createdAt&quot;:null,
-                    &quot;name&quot;:&quot;VIEW_HIDDEN_DASHBOARDS&quot;,
-                    &quot;block&quot;:null
-                    }],
-  &quot;preferences&quot;:[{
-                    &quot;id&quot;:6,
-                    &quot;modifiedAt&quot;:1544195439376,
-                    &quot;createdAt&quot;:1544195439376,
-                    &quot;name&quot;:&quot;THEME&quot;,
-                    &quot;value&quot;:&quot;32&quot;
-                    }],
- &quot;lastLogin&quot;:1544617640554,
- &quot;source&quot;:&quot;INTERNAL&quot;,
- &quot;status&quot;:&quot;ACTIVE&quot;
- }
-</code></pre>
-
 <h4 id="step-3-create-a-test-suite">Step 3: Create a test suite</h4>
 <p><strong>Request</strong></p>
 <p><strong>Method:</strong> POST,
