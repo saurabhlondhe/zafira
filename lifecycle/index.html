@@ -300,61 +300,74 @@
     Step 1: Refresh token
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#response" title="Response" class="md-nav__link">
+    Response
+  </a>
+  
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-2-get-user-profile" title="Step 2: Get user profile" class="md-nav__link">
     Step 2: Get user profile
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-3-create-a-test-suite" title="Step 3: Create a test suite" class="md-nav__link">
     Step 3: Create a test suite
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-4-create-a-job" title="Step 4: Create a job" class="md-nav__link">
     Step 4: Create a job
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-5-create-a-test-run" title="Step 5: Create a test run" class="md-nav__link">
     Step 5: Create a test run
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-6-create-a-test-case" title="Step 6: Create a test case" class="md-nav__link">
     Step 6: Create a test case
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-7-start-a-test" title="Step 7: Start a test" class="md-nav__link">
     Step 7: Start a test
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-8-finish-a-test" title="Step 8: Finish a test" class="md-nav__link">
     Step 8: Finish a test
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-9-finish-a-test-run" title="Step 9: Finish a test run" class="md-nav__link">
     Step 9: Finish a test run
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -466,61 +479,74 @@
     Step 1: Refresh token
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#response" title="Response" class="md-nav__link">
+    Response
+  </a>
+  
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-2-get-user-profile" title="Step 2: Get user profile" class="md-nav__link">
     Step 2: Get user profile
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-3-create-a-test-suite" title="Step 3: Create a test suite" class="md-nav__link">
     Step 3: Create a test suite
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-4-create-a-job" title="Step 4: Create a job" class="md-nav__link">
     Step 4: Create a job
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-5-create-a-test-run" title="Step 5: Create a test run" class="md-nav__link">
     Step 5: Create a test run
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-6-create-a-test-case" title="Step 6: Create a test case" class="md-nav__link">
     Step 6: Create a test case
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-7-start-a-test" title="Step 7: Start a test" class="md-nav__link">
     Step 7: Start a test
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-8-finish-a-test" title="Step 8: Finish a test" class="md-nav__link">
     Step 8: Finish a test
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-9-finish-a-test-run" title="Step 9: Finish a test run" class="md-nav__link">
     Step 9: Finish a test run
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -544,12 +570,13 @@
                 
                 
                 <h1 id="lifecycle">Lifecycle</h1>
-<h4 id="step-1-refresh-token">Step 1: Refresh token</h4>
-<p><strong>Request</strong></p>
-<p><strong>Method:</strong> POST,
-<strong>URI:</strong> ~/zafira-ws/api/auth/refresh
-<strong>Headers:</strong> No
-<strong>Data:</strong></p>
+<h3 id="step-1-refresh-token">Step 1: Refresh token</h3>
+<p><strong>POST: /zafira-ws/api/auth/refresh</strong></p>
+<pre><code class="json">{
+  &quot;refreshToken&quot;: &quot;eyJhbGciOiJIUzUxMiJ9...&quot;
+}
+</code></pre>
+
 <table>
 <thead>
 <tr>
@@ -566,15 +593,16 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Body example:</strong></p>
+<h4 id="response">Response</h4>
 <pre><code class="json">{
-  &quot;refreshToken&quot;: &quot;eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwicGFzc3dvcmQiOiJPUG1zRDFrbTdvaGlIOGtWNjJ3TmRRb3Awb3BCWlBkdiIsInRlbmFudCI6InphZmlyYSIsImV4cCI6MTMwMzkzNjM5OTQ5fQ.pE7d-yr14QxlGSDaBQOn7mRR-2SGgr8RXvdTtZU3JHOEDw3QIVyEJYp-2sTlYiHzG5T_mfuvk7QnccdQZB0CHA&quot;
+  &quot;type&quot;: &quot;Bearer&quot;,
+  &quot;accessToken&quot;: &quot;eyJhbGciOiJIUzUMiJ9...&quot;,
+  &quot;refreshToken&quot;: &quot;eyJhbGciOiJIUzUxMi...&quot;,
+  &quot;expiresIn&quot;: 300,
+  &quot;tenant&quot;: &quot;zafira&quot;
 }
 </code></pre>
 
-<p><strong>Response</strong></p>
-<p><strong>Status code:</strong> 200
-<strong>Response Body:</strong></p>
 <table>
 <thead>
 <tr>
@@ -611,16 +639,6 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Body example:</strong></p>
-<pre><code class="json">{
-  &quot;type&quot;: &quot;Bearer&quot;,
-  &quot;accessToken&quot;: &quot;eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwidXNlcm5hbWUiOiJxcHNkZW1vIiwiZ3JvdXBJZHMiOlszXSwidGVuYW50IjoiemFmaXJhIiwiZXhwIjoxNTQ0NjM5MTQyfQ.H4JE7TEUodDEXpfipP7NjDWE0ORjGOCFgSFlQ0X5LfcUSVmQbebazh7C0_UBVmIZeBb6hqLNwEtqW07-mchwrQ&quot;,
-  &quot;refreshToken&quot;: &quot;eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwicGFzc3dvcmQiOiJPUG1zRDFrbTdvaGlIOGtWNjJ3TmRRb3Awb3BCWlBkdiIsInRlbmFudCI6InphZmlyYSIsImV4cCI6MTU0NTIyNTk0Mn0.DcYuX4gQYuLeCFqf-fyZhr2Oe0D0ebsHmHPFyqFVWrlV6WtNEfDNjmjkm4XPumfcMD9lytWzzGwGecan3APf2g&quot;,
-  &quot;expiresIn&quot;: 300,
-  &quot;tenant&quot;: &quot;zafira&quot;
-}
-</code></pre>
-
 <h4 id="step-2-get-user-profile">Step 2: Get user profile</h4>
 <p><strong>Request</strong></p>
 <p><strong>Method:</strong> GET,
