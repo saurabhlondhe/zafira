@@ -307,15 +307,15 @@
     Step 2: Get user profile
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#step-3-create-a-test-suite" title="Step 3: Create a test suite" class="md-nav__link">
     Step 3: Create a test suite
   </a>
   
-</li>
+    <nav class="md-nav">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#step-4-create-a-job" title="Step 4: Create a job" class="md-nav__link">
@@ -479,15 +479,15 @@
     Step 2: Get user profile
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#step-3-create-a-test-suite" title="Step 3: Create a test suite" class="md-nav__link">
     Step 3: Create a test suite
   </a>
   
-</li>
+    <nav class="md-nav">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#step-4-create-a-job" title="Step 4: Create a job" class="md-nav__link">
@@ -557,8 +557,8 @@
                 
                 <h1 id="lifecycle">Lifecycle</h1>
 <h3 id="step-1-refresh-token">Step 1: Refresh token</h3>
-<p><strong>Request</strong></p>
 <p><strong>POST: /zafira-ws/api/auth/refresh</strong></p>
+<p><strong>Request</strong></p>
 <pre><code class="json">{
   &quot;refreshToken&quot;: &quot;eyJhbGciOiJIUzUxMiJ9...&quot;
 }
@@ -622,31 +622,17 @@
 <tr>
 <td align="center">tenant</td>
 <td align="center">String</td>
-<td align="center">Nodename of kubernetes</td>
+<td align="center">Tenant name</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h3 id="step-2-get-user-profile">Step 2: Get user profile</h3>
-<p><strong>Request</strong></p>
 <p><strong>GET: /zafira-ws/api/users/profile?username={username}</strong></p>
-<p><strong>Headers:</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">Field</th>
-<th align="center">Datatype</th>
-<th align="center">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Authorization</td>
-<td align="center">String</td>
-<td align="center">Type + Access token</td>
-</tr>
-</tbody>
-</table>
+<p><strong>Headers:</strong> Authorization=Bearer {accessToken}</p>
+<p><strong>Request</strong></p>
+<pre><code class="json"></code></pre>
+
 <p><strong>Response</strong></p>
 <pre><code class="json">{
   &quot;id&quot;:2,
@@ -729,11 +715,10 @@
 </tr>
 </tbody>
 </table>
-<h4 id="step-3-create-a-test-suite">Step 3: Create a test suite</h4>
+<hr />
+<h3 id="step-3-create-a-test-suite">Step 3: Create a test suite</h3>
 <p><strong>Request</strong></p>
-<p><strong>Method:</strong> POST,
-<strong>URI:</strong> ~/zafira-ws/api/tests/suites
-<strong>Headers:</strong></p>
+<p><strong>POST: /zafira-ws/api/tests/suites</strong></p>
 <table>
 <thead>
 <tr>
