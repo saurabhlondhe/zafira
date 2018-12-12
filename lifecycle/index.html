@@ -90,7 +90,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#zafiras-minimal-http-flow" tabindex="1" class="md-skip">
+      <a href="../#lifecycle" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -543,9 +543,8 @@
                   <a href="https://github.com/qaprosoft/zafira/edit/master/docs/lifecycle.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="zafiras-minimal-http-flow">Zafira's minimal http flow</h1>
-<hr />
-<h2 id="step-1-refresh-token">Step 1: Refresh token</h2>
+                <h1 id="lifecycle">Lifecycle</h1>
+<h4 id="step-1-refresh-token">Step 1: Refresh token</h4>
 <p><strong>Request</strong></p>
 <p><strong>Method:</strong> POST,
 <strong>URI:</strong> ~/zafira-ws/api/auth/refresh
@@ -622,8 +621,7 @@
 }
 </code></pre>
 
-<hr />
-<h2 id="step-2-get-user-profile">Step 2: Get user profile</h2>
+<h4 id="step-2-get-user-profile">Step 2: Get user profile</h4>
 <p><strong>Request</strong></p>
 <p><strong>Method:</strong> GET,
 <strong>URI:</strong> ~/zafira-ws/api/users/profile?username={username}
@@ -731,8 +729,7 @@
  }
 </code></pre>
 
-<hr />
-<h2 id="step-3-create-a-test-suite">Step 3: Create a test suite</h2>
+<h4 id="step-3-create-a-test-suite">Step 3: Create a test suite</h4>
 <p><strong>Request</strong></p>
 <p><strong>Method:</strong> POST,
 <strong>URI:</strong> ~/zafira-ws/api/tests/suites
@@ -831,8 +828,7 @@
 }
 </code></pre>
 
-<hr />
-<h2 id="step-4-create-a-job">Step 4: Create a job</h2>
+<h4 id="step-4-create-a-job">Step 4: Create a job</h4>
 <p><strong>Request</strong></p>
 <p><strong>Method:</strong> POST,
 <strong>URI:</strong> ~/zafira-ws/api/jobs
@@ -943,8 +939,7 @@
 }
 </code></pre>
 
-<hr />
-<h2 id="step-5-create-a-test-run">Step 5: Create a test run</h2>
+<h4 id="step-5-create-a-test-run">Step 5: Create a test run</h4>
 <p>Registers a test run on Zafira UI
 <strong>Request</strong></p>
 <p><strong>Method:</strong> POST,
@@ -1098,8 +1093,7 @@
  }
 </code></pre>
 
-<hr />
-<h2 id="step-6-create-a-test-case">Step 6: Create a test case</h2>
+<h4 id="step-6-create-a-test-case">Step 6: Create a test case</h4>
 <p><strong>Request</strong></p>
 <p><strong>Method:</strong> POST,
 <strong>URI:</strong> ~/zafira-ws/api/tests/cases
@@ -1210,8 +1204,7 @@
  }
 </code></pre>
 
-<hr />
-<h2 id="step-7-start-a-test">Step 7: Start a test</h2>
+<h4 id="step-7-start-a-test">Step 7: Start a test</h4>
 <p>Registers a test start on Zafira UI
 <strong>Request</strong></p>
 <p><strong>Method:</strong> POST,
@@ -1353,8 +1346,7 @@
 }
 </code></pre>
 
-<hr />
-<h2 id="step-8-finish-a-test">Step 8: Finish a test</h2>
+<h4 id="step-8-finish-a-test">Step 8: Finish a test</h4>
 <p><strong>Request</strong></p>
 <p><strong>Method:</strong> POST,
 <strong>URI:</strong> ~/zafira-ws/api/tests/{testId}/finish
@@ -1532,8 +1524,7 @@
 }
 </code></pre>
 
-<hr />
-<h2 id="step-9-finish-a-test-run">Step 9: Finish a test run</h2>
+<h4 id="step-9-finish-a-test-run">Step 9: Finish a test run</h4>
 <p><strong>Request</strong></p>
 <p><strong>Method:</strong> POST,
 <strong>URI:</strong> ~/zafira-ws/api/tests/runs/{testRunId}/finish
