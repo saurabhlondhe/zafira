@@ -314,53 +314,47 @@
     Step 3: Create a test suite
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#step-4-create-a-job" title="Step 4: Create a job" class="md-nav__link">
     Step 4: Create a job
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#step-5-create-a-test-run" title="Step 5: Create a test run" class="md-nav__link">
     Step 5: Create a test run
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#step-6-create-a-test-case" title="Step 6: Create a test case" class="md-nav__link">
     Step 6: Create a test case
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#step-7-start-a-test" title="Step 7: Start a test" class="md-nav__link">
     Step 7: Start a test
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#step-8-finish-a-test" title="Step 8: Finish a test" class="md-nav__link">
     Step 8: Finish a test
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#step-9-finish-a-test-run" title="Step 9: Finish a test run" class="md-nav__link">
     Step 9: Finish a test run
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -486,53 +480,47 @@
     Step 3: Create a test suite
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#step-4-create-a-job" title="Step 4: Create a job" class="md-nav__link">
     Step 4: Create a job
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#step-5-create-a-test-run" title="Step 5: Create a test run" class="md-nav__link">
     Step 5: Create a test run
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#step-6-create-a-test-case" title="Step 6: Create a test case" class="md-nav__link">
     Step 6: Create a test case
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#step-7-start-a-test" title="Step 7: Start a test" class="md-nav__link">
     Step 7: Start a test
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#step-8-finish-a-test" title="Step 8: Finish a test" class="md-nav__link">
     Step 8: Finish a test
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#step-9-finish-a-test-run" title="Step 9: Finish a test run" class="md-nav__link">
     Step 9: Finish a test run
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -556,6 +544,11 @@
                 
                 
                 <h1 id="lifecycle">Lifecycle</h1>
+<p>Schema below illustrates general test run flow that should be followed for new listeners implmentation:
+<p align="center">
+  <img width="700px" height="600px" src="img/lifecycle.png">
+</p></p>
+<hr />
 <h3 id="step-1-refresh-token">Step 1: Refresh token</h3>
 <p><strong>POST: /zafira-ws/api/auth/refresh</strong></p>
 <p><strong>Request</strong></p>
@@ -793,7 +786,7 @@ None</p>
 </tbody>
 </table>
 <hr />
-<h4 id="step-4-create-a-job">Step 4: Create a job</h4>
+<h3 id="step-4-create-a-job">Step 4: Create a job</h3>
 <p><strong>POST: /zafira-ws/api/jobs</strong></p>
 <p><strong>Headers:</strong> Authorization=Bearer {accessToken}</p>
 <p><strong>Request</strong></p>
@@ -883,7 +876,7 @@ None</p>
 </tbody>
 </table>
 <hr />
-<h4 id="step-5-create-a-test-run">Step 5: Create a test run</h4>
+<h3 id="step-5-create-a-test-run">Step 5: Create a test run</h3>
 <p><strong>POST: /zafira-ws/api/tests/runs</strong></p>
 <p><strong>Headers:</strong> Authorization=Bearer {accessToken}</p>
 <p><strong>Request</strong></p>
@@ -1015,7 +1008,7 @@ None</p>
 </tbody>
 </table>
 <hr />
-<h4 id="step-6-create-a-test-case">Step 6: Create a test case</h4>
+<h3 id="step-6-create-a-test-case">Step 6: Create a test case</h3>
 <p><strong>POST: /zafira-ws/api/tests/cases</strong></p>
 <p><strong>Headers:</strong> Authorization=Bearer {accessToken}</p>
 <p><strong>Request</strong></p>
@@ -1105,7 +1098,7 @@ None</p>
 </tbody>
 </table>
 <hr />
-<h4 id="step-7-start-a-test">Step 7: Start a test</h4>
+<h3 id="step-7-start-a-test">Step 7: Start a test</h3>
 <p><strong>POST: /zafira-ws/api/tests</strong></p>
 <p><strong>Headers:</strong> Authorization=Bearer {accessToken}</p>
 <p><strong>Request</strong></p>
@@ -1225,7 +1218,7 @@ None</p>
 </tbody>
 </table>
 <hr />
-<h4 id="step-8-finish-a-test">Step 8: Finish a test</h4>
+<h3 id="step-8-finish-a-test">Step 8: Finish a test</h3>
 <p><strong>POST: /zafira-ws/api/tests/{testId}/finish</strong></p>
 <p><strong>Headers:</strong> Authorization=Bearer {accessToken}</p>
 <p><strong>Request</strong></p>
@@ -1381,7 +1374,7 @@ None</p>
 </tbody>
 </table>
 <hr />
-<h4 id="step-9-finish-a-test-run">Step 9: Finish a test run</h4>
+<h3 id="step-9-finish-a-test-run">Step 9: Finish a test run</h3>
 <p><strong>POST: /zafira-ws/api/tests/runs/{testRunId}/finish</strong></p>
 <p><strong>Headers:</strong> Authorization=Bearer {accessToken}</p>
 <p><strong>Request</strong>
