@@ -882,7 +882,6 @@ None</p>
 <p><strong>Request</strong></p>
 <pre><code class="json">{
    &quot;buildNumber&quot;: 0,
-   &quot;driverMode&quot;: &quot;METHOD_MODE&quot;,
    &quot;jobId&quot;: 8,
    &quot;startedBy&quot;: &quot;HUMAN&quot;,
    &quot;testSuiteId&quot;: 8
@@ -918,11 +917,6 @@ None</p>
 <td align="center">String</td>
 <td align="center">One of the values : "SCHEDULER", "UPSTREAM_JOB", "HUMAN"</td>
 </tr>
-<tr>
-<td align="center">driverMode</td>
-<td align="center">String</td>
-<td align="center">One of the values :  METHOD_MODE", "CLASS_MODE", "SUITE_MODE"</td>
-</tr>
 </tbody>
 </table>
 <p><strong>Response</strong></p>
@@ -936,7 +930,6 @@ None</p>
    &quot;startedBy&quot;: &quot;HUMAN&quot;,
    &quot;knownIssue&quot;: false,
    &quot;blocker&quot;: false,
-   &quot;driverMode&quot;: &quot;METHOD_MODE&quot;,
    &quot;reviewed&quot;: false
  }
 </code></pre>
@@ -981,11 +974,6 @@ None</p>
 <td align="center">Unexpected behavior that keeps you from performing all test case steps</td>
 </tr>
 <tr>
-<td align="center">driverMode</td>
-<td align="center">String</td>
-<td align="center">Optional value : "METHOD_MODE", "CLASS_MODE", "SUITE_MODE"</td>
-</tr>
-<tr>
 <td align="center">knownIssue</td>
 <td align="center">bool</td>
 <td align="center">Failing reason in ticket</td>
@@ -999,11 +987,6 @@ None</p>
 <td align="center">status</td>
 <td align="center">String</td>
 <td align="center">Test run status ("UNKNOWN", "IN_PROGRESS", "PASSED", "FAILED", "SKIPPED", "ABORTED", "QUEUED")</td>
-</tr>
-<tr>
-<td align="center">driverMode</td>
-<td align="center">String</td>
-<td align="center">One of the values :  METHOD_MODE", "CLASS_MODE", "SUITE_MODE"</td>
 </tr>
 </tbody>
 </table>
@@ -1390,7 +1373,6 @@ None</p>
   &quot;startedBy&quot;: &quot;HUMAN&quot;,
   &quot;knownIssue&quot;: true,
   &quot;blocker&quot;: false,
-  &quot;driverMode&quot;: &quot;METHOD_MODE&quot;,
   &quot;reviewed&quot;: false
 }
 </code></pre>
@@ -1448,11 +1430,6 @@ None</p>
 <td align="center">blocker</td>
 <td align="center">bool</td>
 <td align="center">Unexpected behavior that keeps you from performing all test case steps</td>
-</tr>
-<tr>
-<td align="center">driverMode</td>
-<td align="center">String</td>
-<td align="center">One of the values :  METHOD_MODE", "CLASS_MODE", "SUITE_MODE"</td>
 </tr>
 <tr>
 <td align="center">reviewed</td>
