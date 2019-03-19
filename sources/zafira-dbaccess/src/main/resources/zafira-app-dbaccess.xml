@@ -12,7 +12,15 @@
 		<property name="maxPoolSize" value="${zafira.db.c3p0.maxPoolSize}" />
 		<property name="idleConnectionTestPeriod" value="${zafira.db.c3p0.idleConnectionTestPeriod}" />
 	</bean>
-	
+
+	<!--<bean id="liquibaseDataSource" scope="prototype" class="com.mchange.v2.c3p0.ComboPooledDataSource">-->
+		<!--<property name="driverClass" value="${zafira.db.jdbc.driverClass}" />-->
+		<!--<property name="jdbcUrl" value="${zafira.db.jdbc.url}" />-->
+		<!--<property name="user" value="${zafira.db.jdbc.user}" />-->
+		<!--<property name="password" value="${zafira.db.jdbc.password}" />-->
+		<!--<property name="maxPoolSize" value="1" />-->
+	<!--</bean>-->
+
 	<bean id="tenancyAppDSWrapper" class="com.qaprosoft.zafira.dbaccess.utils.TenancyDataSourceWrapper">
 		<constructor-arg index="0" ref="appDataSource" />
 	</bean>
@@ -32,5 +40,7 @@
 		<property name="basePackage" value="com.qaprosoft.zafira.dbaccess.dao.mysql.application" />
 		<property name="sqlSessionFactoryBeanName" value="applicationSqlSessionFactory"/>
 	</bean>
+
+	<bean class="com.qaprosoft.zafira.dbaccess.utils.DbPatcher" />
 
 </beans>

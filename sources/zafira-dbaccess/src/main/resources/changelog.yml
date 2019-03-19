@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: 01_test_liquibase
+      author: nsidorevich
+      changes:
+        - sqlFile:
+            encoding: utf8
+            path: changeset/01_test_liquibase.sql
+            relativeToChangelogFile: true
+            splitStatements: false
