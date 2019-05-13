@@ -41,8 +41,7 @@ import org.apache.commons.configuration2.ex.ConfigurationException;
 import org.apache.commons.configuration2.tree.MergeCombiner;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
 import org.testng.IHookCallBack;
 import org.testng.IHookable;
 import org.testng.IInvokedMethod;
@@ -80,7 +79,7 @@ import com.qaprosoft.zafira.models.dto.user.UserType;
  */
 public class ZafiraListener implements ISuiteListener, ITestListener, IHookable, IInvokedMethodListener
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(ZafiraListener.class);
+	private static final Logger LOGGER = Logger.getLogger(ZafiraListener.class);
 	
 	private static final String ZAFIRA_PROPERTIES = "zafira.properties";
 	
@@ -491,17 +490,17 @@ public class ZafiraListener implements ISuiteListener, ITestListener, IHookable,
 	@Override
 	public void run(IHookCallBack hookCallBack, ITestResult testResult)
 	{
-		LOGGER.debug("IHookCallBack: run started");
+		LOGGER.info("IHookCallBack: run started");
 		if (!ZAFIRA_ENABLED)
 		{
-			LOGGER.debug("IHookCallBack: zafira not connected so running the test body");
+			LOGGER.info("IHookCallBack: zafira not connected so running the test body");
 			hookCallBack.runTestMethod(testResult);
 		} else
 		{
 			String testName = configurator.getTestName(testResult);
-			LOGGER.debug("IHookCallBack: testName: " + testName);
+			LOGGER.info("IHookCallBack: testName: " + testName);
 			TestType startedTest = registeredTests.get(testName);
-			LOGGER.debug("IHookCallBack: startedTest: " + startedTest);
+			LOGGER.info("IHookCallBack: startedTest: " + startedTest);
 
 			if (ZAFIRA_RERUN_FAILURES && startedTest != null && !startedTest.isNeedRerun())
 			{
@@ -509,7 +508,7 @@ public class ZafiraListener implements ISuiteListener, ITestListener, IHookable,
 				// do nothing
 			} else
 			{
-				LOGGER.debug("IHookCallBack: default execution of test body");
+				LOGGER.info("IHookCallBack: default execution of test body");
 				hookCallBack.runTestMethod(testResult);
 			}
 		}
