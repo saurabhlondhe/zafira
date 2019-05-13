@@ -491,19 +491,25 @@ public class ZafiraListener implements ISuiteListener, ITestListener, IHookable,
 	@Override
 	public void run(IHookCallBack hookCallBack, ITestResult testResult)
 	{
+		LOGGER.debug("IHookCallBack: run started");
 		if (!ZAFIRA_ENABLED)
 		{
+			LOGGER.debug("IHookCallBack: zafira not connected so running the test body");
 			hookCallBack.runTestMethod(testResult);
 		} else
 		{
 			String testName = configurator.getTestName(testResult);
+			LOGGER.debug("IHookCallBack: testName: " + testName);
 			TestType startedTest = registeredTests.get(testName);
+			LOGGER.debug("IHookCallBack: startedTest: " + startedTest);
 
 			if (ZAFIRA_RERUN_FAILURES && startedTest != null && !startedTest.isNeedRerun())
 			{
+				LOGGER.info("IHookCallBack: test will not be executed since it has already passed before");
 				// do nothing
 			} else
 			{
+				LOGGER.debug("IHookCallBack: default execution of test body");
 				hookCallBack.runTestMethod(testResult);
 			}
 		}
