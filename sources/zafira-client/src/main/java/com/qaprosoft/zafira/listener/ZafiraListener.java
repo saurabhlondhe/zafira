@@ -42,6 +42,7 @@ import org.apache.commons.configuration2.tree.MergeCombiner;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.IHookCallBack;
 import org.testng.IHookable;
 import org.testng.IInvokedMethod;
@@ -116,6 +117,8 @@ public class ZafiraListener implements ISuiteListener, ITestListener, IHookable,
 	public void onStart(ISuite suiteContext)
 	{
 		boolean initialized = initializeZafira(suiteContext);
+		LoggerFactory.getLogger(ZafiraListener.class).info("ZafiraListener.onStart()!!!");
+
 		// Exit on initialization failure
 		if(!initialized) return;
 		
@@ -500,7 +503,9 @@ public class ZafiraListener implements ISuiteListener, ITestListener, IHookable,
 			String testName = configurator.getTestName(testResult);
 			LOGGER.info("IHookCallBack: testName: " + testName);
 			TestType startedTest = registeredTests.get(testName);
-			LOGGER.info("IHookCallBack: startedTest: " + startedTest);
+			LOGGER.info("IHookCallBack: startedTest.getStatus(): " + startedTest.getStatus());
+			LOGGER.info("IHookCallBack: startedTest.getStartTime(): " + startedTest.getStartTime());
+			LOGGER.info("IHookCallBack: startedTest.getFinishTime(): " + startedTest.getFinishTime());
 
 			if (ZAFIRA_RERUN_FAILURES && startedTest != null && !startedTest.isNeedRerun())
 			{
