@@ -159,7 +159,9 @@ public class ZafiraListener implements ISuiteListener, ITestListener, IHookable,
 			if(!StringUtils.isEmpty(ci.getCiRunId())) 
 			{
 				Response<TestRunType> response = zc.getTestRunByCiRunId(ci.getCiRunId());
+				LOGGER.info("ci run id: " + ci.getCiRunId());
 				this.run = response.getObject();
+				LOGGER.info("run object: " + this.run);
 			}
 			
 			if (this.run != null) 
@@ -188,6 +190,7 @@ public class ZafiraListener implements ISuiteListener, ITestListener, IHookable,
 					ExcludeTestsForRerun.excludeTestsForRerun(suiteContext, testRunResults, configurator);
 				}
 
+				LOGGER.info("setting previousRunFound to true");
 				previousRunFound = true;
 			} 
 			else 
