@@ -105,6 +105,7 @@ public class ZafiraListener implements ISuiteListener, ITestListener, IHookable,
 	private JobType job = null;
 	private TestSuiteType suite = null;
 	private TestRunType run = null;
+	private boolean previousRunFound = false;
 	private Map<String, TestType> registeredTests = new HashMap<>();
 	private Set<String> classesToRerun = new HashSet<>();
 	
@@ -186,6 +187,8 @@ public class ZafiraListener implements ISuiteListener, ITestListener, IHookable,
 				{
 					ExcludeTestsForRerun.excludeTestsForRerun(suiteContext, testRunResults, configurator);
 				}
+
+				previousRunFound = true;
 			} 
 			else 
 			{
@@ -507,9 +510,9 @@ public class ZafiraListener implements ISuiteListener, ITestListener, IHookable,
 			LOGGER.info("IHookCallBack: startedTest.getStartTime(): " + startedTest.getStartTime());
 			LOGGER.info("IHookCallBack: startedTest.getFinishTime(): " + startedTest.getFinishTime());
 
-			if (ZAFIRA_RERUN_FAILURES && startedTest != null && !startedTest.isNeedRerun())
+			if (ZAFIRA_RERUN_FAILURES && startedTest != null && !startedTest.isNeedRerun() && previousRunFound)
 			{
-				LOGGER.info("IHookCallBack: test will not be executed since it has already passed before");
+				LOGGER.info("IHookCallBack: test will not be executed since it already passed in previous run");
 				// do nothing
 			} else
 			{
