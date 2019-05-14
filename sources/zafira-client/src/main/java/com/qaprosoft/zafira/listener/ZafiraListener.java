@@ -41,7 +41,7 @@ import org.apache.commons.configuration2.ex.ConfigurationException;
 import org.apache.commons.configuration2.tree.MergeCombiner;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.IHookCallBack;
 import org.testng.IHookable;
@@ -80,7 +80,7 @@ import com.qaprosoft.zafira.models.dto.user.UserType;
  */
 public class ZafiraListener implements ISuiteListener, ITestListener, IHookable, IInvokedMethodListener
 {
-	private static final Logger LOGGER = Logger.getLogger(ZafiraListener.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ZafiraListener.class);
 	
 	private static final String ZAFIRA_PROPERTIES = "zafira.properties";
 	
@@ -105,7 +105,6 @@ public class ZafiraListener implements ISuiteListener, ITestListener, IHookable,
 	private JobType job = null;
 	private TestSuiteType suite = null;
 	private TestRunType run = null;
-	private boolean previousRunFound = false;
 	private Map<String, TestType> registeredTests = new HashMap<>();
 	private Set<String> classesToRerun = new HashSet<>();
 	
@@ -118,8 +117,6 @@ public class ZafiraListener implements ISuiteListener, ITestListener, IHookable,
 	public void onStart(ISuite suiteContext)
 	{
 		boolean initialized = initializeZafira(suiteContext);
-		LoggerFactory.getLogger(ZafiraListener.class).info("ZafiraListener.onStart()!!!");
-
 		// Exit on initialization failure
 		if(!initialized) return;
 		
@@ -159,12 +156,12 @@ public class ZafiraListener implements ISuiteListener, ITestListener, IHookable,
 			if(!StringUtils.isEmpty(ci.getCiRunId())) 
 			{
 				Response<TestRunType> response = zc.getTestRunByCiRunId(ci.getCiRunId());
-				LOGGER.info("ci run id: " + ci.getCiRunId());
 				this.run = response.getObject();
-				LOGGER.info("run object: " + this.run);
 			}
 			
-			if (this.run != null) 
+			// since qps pipeline now manages registration of new runs run object will be always returned by services
+			// so to define if it's rerun or not will rely on ZAFIRA_RERUN_FAILURES flag
+			if (this.run != null && ZAFIRA_RERUN_FAILURES)
 			{
 				// Already discovered run with the same CI_RUN_ID, it is re-run functionality!
 				// Reset build number for re-run to map to the latest rerun build
@@ -189,9 +186,6 @@ public class ZafiraListener implements ISuiteListener, ITestListener, IHookable,
 				{
 					ExcludeTestsForRerun.excludeTestsForRerun(suiteContext, testRunResults, configurator);
 				}
-
-				LOGGER.info("setting previousRunFound to true");
-				previousRunFound = true;
 			} 
 			else 
 			{
@@ -499,7 +493,6 @@ public class ZafiraListener implements ISuiteListener, ITestListener, IHookable,
 	@Override
 	public void run(IHookCallBack hookCallBack, ITestResult testResult)
 	{
-		LOGGER.info("IHookCallBack: run started");
 		if (!ZAFIRA_ENABLED)
 		{
 			LOGGER.info("IHookCallBack: zafira not connected so running the test body");
@@ -507,19 +500,15 @@ public class ZafiraListener implements ISuiteListener, ITestListener, IHookable,
 		} else
 		{
 			String testName = configurator.getTestName(testResult);
-			LOGGER.info("IHookCallBack: testName: " + testName);
 			TestType startedTest = registeredTests.get(testName);
-			LOGGER.info("IHookCallBack: startedTest.getStatus(): " + startedTest.getStatus());
-			LOGGER.info("IHookCallBack: startedTest.getStartTime(): " + startedTest.getStartTime());
-			LOGGER.info("IHookCallBack: startedTest.getFinishTime(): " + startedTest.getFinishTime());
 
-			if (ZAFIRA_RERUN_FAILURES && startedTest != null && !startedTest.isNeedRerun() && previousRunFound)
+			if (ZAFIRA_RERUN_FAILURES && startedTest != null && !startedTest.isNeedRerun())
 			{
 				LOGGER.info("IHookCallBack: test will not be executed since it already passed in previous run");
 				// do nothing
 			} else
 			{
-				LOGGER.info("IHookCallBack: default execution of test body");
+				LOGGER.debug("IHookCallBack: default execution of test body");
 				hookCallBack.runTestMethod(testResult);
 			}
 		}
