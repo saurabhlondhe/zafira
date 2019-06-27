@@ -1103,7 +1103,7 @@ public class ZafiraClient {
         return getAsync(this.sheets);
     }
 
-    private TenantType getTenantType() {
+    public TenantType getTenantType() {
         return getAsync(this.tenantType);
     }
 

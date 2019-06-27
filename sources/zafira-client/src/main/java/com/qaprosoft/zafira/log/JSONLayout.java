@@ -20,6 +20,8 @@ import static com.qaprosoft.zafira.log.MetaInfoLevel.META_INFO;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.qaprosoft.zafira.client.ZafiraClient;
+import com.qaprosoft.zafira.client.ZafiraSingleton;
 import org.apache.log4j.Layout;
 import org.apache.log4j.spi.LoggingEvent;
 import org.apache.log4j.spi.ThrowableInformation;
@@ -97,6 +99,12 @@ public class JSONLayout extends Layout {
         json.put("threadName", event.getThreadName());
         json.put("level", event.getLevel().toString());
         json.put("timestamp", System.currentTimeMillis());
+
+        ZafiraClient client = ZafiraSingleton.INSTANCE.getClient();
+        if(client != null) {
+            String tenantName = client.getTenantType().getTenant();
+            json.put("tenant", tenantName);
+        }
         if (event.getLevel().equals(META_INFO)) {
             MetaInfoMessage metaInfoMessage = (MetaInfoMessage) event.getMessage();
             json.put("message", metaInfoMessage.getMessage());
