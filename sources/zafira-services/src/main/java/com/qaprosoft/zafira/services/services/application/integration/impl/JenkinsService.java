@@ -15,10 +15,27 @@
  *******************************************************************************/
 package com.qaprosoft.zafira.services.services.application.integration.impl;
 
-import static com.qaprosoft.zafira.models.db.Setting.Tool.JENKINS;
-import static com.qaprosoft.zafira.models.dto.BuildParameterType.BuildParameterClass.BOOLEAN;
-import static com.qaprosoft.zafira.models.dto.BuildParameterType.BuildParameterClass.HIDDEN;
-import static com.qaprosoft.zafira.models.dto.BuildParameterType.BuildParameterClass.STRING;
+import com.google.common.base.Predicate;
+import com.google.common.collect.Collections2;
+import com.offbytwo.jenkins.JenkinsServer;
+import com.offbytwo.jenkins.model.Build;
+import com.offbytwo.jenkins.model.BuildWithDetails;
+import com.offbytwo.jenkins.model.ExtractHeader;
+import com.offbytwo.jenkins.model.FolderJob;
+import com.offbytwo.jenkins.model.JobWithDetails;
+import com.offbytwo.jenkins.model.QueueItem;
+import com.offbytwo.jenkins.model.QueueReference;
+import com.qaprosoft.zafira.models.db.Job;
+import com.qaprosoft.zafira.models.dto.BuildParameterType;
+import com.qaprosoft.zafira.models.dto.JobResult;
+import com.qaprosoft.zafira.services.exceptions.ForbiddenOperationException;
+import com.qaprosoft.zafira.services.services.application.SettingsService;
+import com.qaprosoft.zafira.services.services.application.integration.AbstractIntegration;
+import com.qaprosoft.zafira.services.services.application.integration.context.JenkinsContext;
+import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -32,29 +49,15 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
 
-import com.offbytwo.jenkins.JenkinsServer;
-import com.offbytwo.jenkins.model.Build;
-import com.offbytwo.jenkins.model.QueueItem;
-import com.qaprosoft.zafira.models.dto.JobResult;
-import com.qaprosoft.zafira.services.exceptions.ForbiddenOperationException;
-import com.qaprosoft.zafira.services.services.application.integration.AbstractIntegration;
-import org.apache.commons.lang.StringUtils;
-
-import com.google.common.base.Predicate;
-import com.google.common.collect.Collections2;
-import com.offbytwo.jenkins.model.BuildWithDetails;
-import com.offbytwo.jenkins.model.ExtractHeader;
-import com.offbytwo.jenkins.model.FolderJob;
-import com.offbytwo.jenkins.model.JobWithDetails;
-import com.offbytwo.jenkins.model.QueueReference;
-import com.qaprosoft.zafira.models.db.Job;
-import com.qaprosoft.zafira.models.dto.BuildParameterType;
-import com.qaprosoft.zafira.services.services.application.SettingsService;
-import com.qaprosoft.zafira.services.services.application.integration.context.JenkinsContext;
-import org.springframework.stereotype.Component;
+import static com.qaprosoft.zafira.models.db.Setting.Tool.JENKINS;
+import static com.qaprosoft.zafira.models.dto.BuildParameterType.BuildParameterClass.BOOLEAN;
+import static com.qaprosoft.zafira.models.dto.BuildParameterType.BuildParameterClass.HIDDEN;
+import static com.qaprosoft.zafira.models.dto.BuildParameterType.BuildParameterClass.STRING;
 
 @Component
 public class JenkinsService extends AbstractIntegration<JenkinsContext> {
+
+    private static final Logger logger = LoggerFactory.getLogger(JenkinsService.class);
 
     private static final String[] REQUIRED_ARGS = new String[] { "scmURL", "branch", "overrideFields" };
 
@@ -110,11 +113,15 @@ public class JenkinsService extends AbstractIntegration<JenkinsContext> {
     public JobResult buildScannerJob(Map<String, String> jobParameters) {
         String scannerJobUrl;
         String jenkinsFolder = context().getFolder();
+        logger.info("JENKINS_FOLDER: " + jenkinsFolder);
+        String jenkinsHost = context().getJenkinsHost();
+        logger.info("JENKINS_HOST: " + jenkinsHost);
         if (StringUtils.isEmpty(jenkinsFolder)) {
-            scannerJobUrl = String.format(SCANNER_JOB_ROOT_URL_PATTERN, context().getJenkinsHost());
+            scannerJobUrl = String.format(SCANNER_JOB_ROOT_URL_PATTERN, jenkinsHost);
         } else {
             scannerJobUrl = String.format(SCANNER_JOB_URL_PATTERN, context().getJenkinsHost(), jenkinsFolder);
         }
+        logger.info("JOB_URL: " + scannerJobUrl);
         return buildJob(scannerJobUrl, jobParameters);
     }
 
